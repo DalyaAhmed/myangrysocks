@@ -1,0 +1,137 @@
+
+
+.header-wrapper {
+    position: relative; // Set relative positioning to enable absolute positioning for children
+    display: flex;
+    align-items: center;
+    padding: 0 20px; 
+    height: 70px; 
+  }
+  
+  .header__heading {
+    position: absolute;
+    left: 0; // Align the logo to the far left
+    margin-left: 30px;
+  }
+  
+  .header__inline-menu {
+    margin: 0 auto; // Center the navigation menu horizontally
+    font-family: sans-serif;
+  }
+  
+  .header__icons {
+    position: absolute;
+    right: 0; // Align the cart icon to the far right
+    margin-right: 30px;
+  }
+  
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the header stays on top */
+    background-color: #000000; /* Adjust background as needed */
+    border-bottom: 1px solid #ddd; /* Optional border */
+    
+    .header {
+      display: flex;
+      justify-content: space-between; /* Distribute space between logo and cart */
+      align-items: center;
+      padding: 10px 20px; /* Adjust padding as needed */
+      width: 100%;
+  
+      .header__inline-menu {
+        flex: 1; /* Allow this to grow and take up space */
+        display: flex;
+        justify-content: center; /* Center the nav items */
+        
+        .list-menu {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          
+          .list-menu__item {
+            margin: 0 10px; /* Adjust spacing between menu items */
+          }
+        }
+      }
+  
+      .header__heading {
+        display: flex;
+        align-items: center;
+        margin-right: auto; /* Push logo to the right */
+        
+        .header__heading-link {
+          display: flex;
+          align-items: center;
+  
+          img {
+            max-width: 100%;
+            height: auto; /* Ensure logo scales properly */
+          }
+        }
+      }
+      
+      .menu-drawer__utility-links {
+        display: flex;
+        align-items: center;
+        margin-left: auto; /* Push cart icon to the right */
+  
+        .menu-drawer__account {
+          margin-left: 10px; /* Adjust spacing if needed */
+        }
+      }
+    }
+  }
+
+  .header__icon--cart {
+    background-color: red;
+  
+    &:hover {
+      background-color: transparent !important; // Adding !important for higher specificity
+    }
+  }
+
+
+/* Set the background color of the first li element to red */
+.header__inline-menu ul.list-menu li:first-child {
+    background-color: red;
+}
+
+/* Change the background color of other li elements to red when hovered */
+.header__inline-menu ul.list-menu li:hover {
+    background-color: red;
+}
+
+/* reset the hover background for the first li */
+.header__inline-menu ul.list-menu li:first-child:hover {
+    background-color: red; /* Keep the first li red even on hover */
+}
+
+/* Remove the underline from all the links in the navigation menu */
+.header__active-menu-item {
+    text-decoration: none;    
+}
+
+/* Optionally, you can add a hover effect to the links to keep it consistent */
+.header__active-menu-item ul.list-menu li a:hover {
+    text-decoration: none; /* Ensures no underline appears on hover */
+}
+
+#cart-icon-bubble {
+    background-color: red; // Set the background color to red
+    padding: 8px; // Optional: Add some padding to make it look better
+    svg {
+      fill: #ffffff; // Ensure the icon color stays white
+    }
+  }
+  
+    .header__menu-item:hover {
+        padding: 1.2rem;
+        text-decoration: none;
+        color: rgba(var(--color-foreground), .75);
+    }
+   
+
+  
+  
