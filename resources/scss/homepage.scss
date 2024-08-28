@@ -1,10 +1,33 @@
 .shopify-section {
     margin: 0 auto;
-    width: calc(100% - 50px); /* Reduces the margin on the sides */
-    padding: 20px;
+    width: 100%; /* Reduces the margin on the sides */
+    padding: 40px;
     background-color: rgba(255, 255, 255, 0.8);
 
     .banner__media {
-        height: 527px;
+        height: 600px;
     }
+}
+
+
+
+.button.button--primary {
+    display: inline-block;
+    font-family: "Exo 2", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: var(--e-global-color-primary);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--e-global-color-primary);
+    border-radius: 0px;
+    padding: 15px 40px;
+    text-decoration: none; /* Ensure the link doesn't have an underline */
+}
+
+/* Optionally, if you want to change the appearance on hover */
+.button.button--primary:hover {
+    background-color: #ffffff; /* Example hover background color */
+    color: var(--e-global-color-primary); /* Example hover text color */
 }

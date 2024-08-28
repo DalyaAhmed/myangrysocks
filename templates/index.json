@@ -30,13 +30,13 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>FAN JÄVLAR HELVETE<\/strong>",
-            "heading_size": "h1"
+            "heading_size": "hxxl"
           }
         },
         "text_3bHkE9": {
           "type": "text",
           "settings": {
-            "text": "<h2>Strumpor<\/h2><h2><a href=\"https:\/\/masstg.wpenginepowered.com\/produkt\/tre-svordomar-pa-en-strumpa\/\">Nu 89:-<\/a><\/h2>",
+            "text": "<h2>Strumpor<\/h2><h1>Nu 89:-<\/h1>",
             "text_style": "body"
           }
         },
@@ -80,13 +80,13 @@
           "type": "heading",
           "settings": {
             "heading": "<strong>Tre Svenska favoriter!<\/strong>",
-            "heading_size": "h1"
+            "heading_size": "hxxl"
           }
         },
         "text_jnbnVP": {
           "type": "text",
           "settings": {
-            "text": "<h2>En bra deal!<\/h2><h2><a href=\"https:\/\/masstg.wpenginepowered.com\/produkt\/tre-svenska-favorit-strumpor-till-herr-och-dam\/\" target=\"_blank\">269:- och fri frakt.<\/a><\/h2>",
+            "text": "<h2>En bra deal!<\/h2><h2><strong>269:- och fri frakt.<\/strong><\/h2>",
             "text_style": "body"
           }
         },
@@ -109,7 +109,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/herr-strumpor-scaled-e1703847631956-600x512-med-sko_80d0f598-0cb5-4889-b769-00d0de9ba9f7.png",
-        "height": "adapt",
+        "height": "small",
         "desktop_image_width": "small",
         "layout": "text_first",
         "desktop_content_position": "top",
@@ -129,21 +129,21 @@
         "heading_YhpnDq": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "<strong>JAG ÄR FAN BÄSTA<\/strong>",
+            "heading_size": "hxxl"
           }
         },
         "text_V6B3W8": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<h2>Ankelstrumpor med självförtoende!<\/h2><h2><strong>69:-<\/strong><\/h2><h2><\/h2>",
             "text_style": "body"
           }
         },
         "button_RcggNN": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
+            "button_label": "Lägg i varukorg",
             "button_link": "",
             "button_style_secondary": false
           }
@@ -154,88 +154,748 @@
         "text_V6B3W8",
         "button_RcggNN"
       ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
       "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
+        "image": "shopify:\/\/shop_images\/roliga-ankelstrumpor-pms-scaled-e1690728460418-600x511-1_3e88a663-0a3c-4c87-bb61-d4b3f9df969c.png",
+        "height": "small",
+        "desktop_image_width": "small",
         "layout": "text_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "image_banner": {
-      "type": "image-banner",
+    "image_with_text_MdnbWr": {
+      "type": "image-with-text",
       "blocks": {
-        "heading": {
+        "heading_AzLx8n": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "<strong>Grattis på födelsdagen!<\/strong>",
             "heading_size": "h0"
           }
         },
-        "button": {
-          "type": "buttons",
+        "text_tr9JKE": {
+          "type": "text",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<h2>Leverans 2-3 dagar och fri frakt!<\/h2><h2><strong>299:-<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_yjBqXb": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "heading_AzLx8n",
+        "text_tr9JKE",
+        "button_yjBqXb"
       ],
       "custom_css": [
-        "Button {color: red;}"
+        ".image-with-text__media {border: none;}"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-1",
+        "image": "shopify:\/\/shop_images\/IMG_1819-scaled-e1703157102221-600x512-1.png",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_h8G6Wa": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_PWJEAb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>JAG TAR INGEN SKIT<\/strong>",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_dY9LyM": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Strumpor<\/h2><h2><strong>Bara 99 kr och fri frakt:-<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_PE3NGK": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_PWJEAb",
+        "text_dY9LyM",
+        "button_PE3NGK"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/jag-tar-ingen-skit-scaled-e1712417627913-600x512-1_69ce73e7-ebf2-4d6a-a981-18ebc8e077e9.png",
+        "height": "small",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
+        "title": "Fri frakt",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "subtitle",
+        "collection": "roliga-strumpor",
+        "products_to_show": 25,
+        "columns_desktop": 2,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_tLNHHk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_NjwAx3": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>DRA ÅT HELVETEStrumpor<\/strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text_3L86Mz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fri frakt!<\/p><h2>99:-<\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_BwyH9V": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_NjwAx3",
+        "text_3L86Mz",
+        "button_BwyH9V"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_84d73716-6eee-463e-8378-7e06f227e804.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_C3BFDq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_QpmhGV": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>En jävla massa kärlek<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_WXpmHe": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>En present fylld av ironi!<\/h2><h2><strong>299:- och fri frakt!<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_7qqYnj": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QpmhGV",
+        "text_WXpmHe",
+        "button_7qqYnj"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/rolig-julklapp-med-strumpor.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_WDaBwP": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Succé! Över 10 000 har beställt roliga strumpor 2024. Gör det du också!",
+        "heading_size": "h0",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
+        "collection": "roliga-strumpor",
+        "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_Q7TNbm": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_K3HPhn": {
+          "type": "heading",
+          "settings": {
+            "heading": "My Angry Socks",
+            "heading_size": "hxl"
+          }
+        },
+        "text_wf8mBE": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>En presentbox som sätter avtryck!<\/h2><h2><strong>419:-<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_Rdgjnr": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_K3HPhn",
+        "text_wf8mBE",
+        "button_Rdgjnr"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_8702-scaled-e1668714548448-600x511-1.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_yRG4VR": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Presenttips",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_4XCPNt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_iWKV4E": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Boxen alla behöver!<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_PRxQEk": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Beställ idag!<\/h2><h2><strong>299:- kr<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_RfzJTU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iWKV4E",
+        "text_PRxQEk",
+        "button_RfzJTU"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/My-Angry-Socks-orginalpresent-scaled-e1707557504172-600x512-1.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_9TXkV3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_paRerx": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Fem par strumpor<\/strong>",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_hcHV9V": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Fri frakt!<\/h2><h2><strong>99:-<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_mU9Mpg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_paRerx",
+        "text_hcHV9V",
+        "button_mU9Mpg"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/roliga-herr-och-dam-strumpor-scaled-e1712685639151-600x512-med-sko.webp",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_qDHKaE": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_9QKXA7": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>EAT MY SHIT PUTIN<\/strong>",
+            "heading_size": "hxl"
+          }
+        },
+        "text_GAYiDY": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Ta ställning!<\/h2><h2><strong>REA 74:-<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_gTyqWN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9QKXA7",
+        "text_GAYiDY",
+        "button_gTyqWN"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/eat-my-shit-putin_b169ba25-efd8-461d-ba08-9a941b1befb0.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_nBbJwy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ypM9cB": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>JÄVLIGT GLAD<\/strong>",
+            "heading_size": "hxl"
+          }
+        },
+        "text_AawLLX": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Sköna ankelstrumpor<\/h2><h2><strong>69:-<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_DtkEyf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ypM9cB",
+        "text_AawLLX",
+        "button_DtkEyf"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/happy-socks-i-present-scaled-e1712416627502-600x512-1_6c73be96-c2c8-463b-b0d9-77b6251acfe3.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_9CD8ey": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_P9EBeF": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Hallå där!<\/strong>",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_QA3Pcn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Dags för nya strumpor eller en rolig present? Så klart, det är därför du är här. Vi har en massa olika sorters strumpor. Arga strumpor, korta strumpor, allvarliga strumpor och en hel del roliga strumpor också.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_P9EBeF",
+        "text_QA3Pcn"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "featured_collection_8t9Ahp": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Hur mycket gillar du rea?",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_7bBHQH": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Hur gärna vill du bli klar med en julklapp redan idag?<\/strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "roliga-strumpor-i-julklapp",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 44,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_q6hdjt": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>T-shirts<\/strong>",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "t-shirts-och-roliga-presenter",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_RdF4eP": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Andra presenter<\/strong>",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "annat",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "bulk",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_gFMea3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_XPDrEn": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>ImTill alla med humör<\/strong>",
+            "heading_size": "hxl"
+          }
+        },
+        "text_Bag7mg": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>3-par sköna strumpor!<\/h2><h2><strong>Endast 299:-<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_xpeNkK": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_XPDrEn",
+        "text_Bag7mg",
+        "button_xpeNkK"
+      ],
+      "custom_css": [
+        ".image-with-text__media {border: none;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_9917-scaled-e1687507257697-600x511-1.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
         "padding_bottom": 36
       }
     }
@@ -245,7 +905,23 @@
     "image_with_text_yDAL8B",
     "image_with_text_VniWgN",
     "image_with_text_YWCwNT",
-    "image_banner",
-    "featured_collection"
+    "image_with_text_MdnbWr",
+    "image_with_text_h8G6Wa",
+    "featured_collection",
+    "image_with_text_tLNHHk",
+    "image_with_text_C3BFDq",
+    "featured_collection_WDaBwP",
+    "image_with_text_Q7TNbm",
+    "featured_collection_yRG4VR",
+    "image_with_text_4XCPNt",
+    "image_with_text_9TXkV3",
+    "image_with_text_qDHKaE",
+    "image_with_text_nBbJwy",
+    "rich_text_9CD8ey",
+    "featured_collection_8t9Ahp",
+    "featured_collection_7bBHQH",
+    "featured_collection_q6hdjt",
+    "featured_collection_RdF4eP",
+    "image_with_text_gFMea3"
   ]
 }
