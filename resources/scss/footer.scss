@@ -1,0 +1,163 @@
+.footer {
+    &__content-top {
+      padding-left: 20px; // Add a small gap from the left edge of the screen
+      margin-left: 0;  
+    }
+  .footer__content-top.page-width{
+    margin-left: 200px;
+  }
+    .page-width {
+      padding-left: 20px; // Add a small gap on the page container
+      margin-left: 0;  
+    }
+  
+    .footer__blocks-wrapper.grid {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 150px;
+    
+    
+      @media (max-width: 768px) {
+        flex-direction: column;
+        padding-left: 20px; // Ensure gap is consistent on smaller screens
+      }
+    }
+  
+    .footer-block {
+      flex: 1; 
+      font-family: sans-serif;
+      &__heading {
+        color: #fff;
+        font-family: "Exo 2", Sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+      }
+     
+      &__details-content {
+        color: #fff;
+        max-width: 800px; // Set a max-width to control paragraph width and lines
+  
+        p {
+          margin-bottom: 20px;
+          line-height: 1.6; // Adjust line height for readability
+        }
+  
+        ul.footer-block__details-content {
+          list-style: none;
+          padding: 0;
+          font-family: Sans-serif; // Apply font family to the list
+  
+          li {
+            margin-bottom: 10px;
+            li:hover{
+                color: red;
+            }
+            a {
+              text-decoration: none;
+              color: inherit; // Ensure the initial color is inherited
+  
+            //   &:hover {
+            //     color: red; // Change color to red on hover
+            //   }
+            }
+            a:hover{
+                color:red;
+            }
+            &:hover {
+                   color: red; // Change color to red on hover
+                 }
+          }
+        
+        }
+      }
+    }
+  
+    .footer-block--menu {
+      text-align: center; // Center the menu block in the middle
+    }
+  
+    .footer-block--social {
+      margin-left: auto; // Push this block to the far right side
+      margin-right: 20px; // Add some spacing from the right edge of the screen
+  
+      @media (max-width: 768px) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  
+    .footer__list-social {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  
+      .list-social__item {
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 10px;
+  
+        a {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+  
+          svg {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  
+    .list-social {
+      list-style: none;
+      padding: 0;
+  
+      &__item {
+        margin-right: 10px;
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+  
+      &__link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: inherit;
+  
+        .icon {
+          width: 32px;
+          height: 32px;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+  
+      .list-social__item {
+        margin-bottom: 10px;
+  
+        a {
+          color: #000000;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          margin-left: 8px;
+  
+          svg {
+            margin-right: 10px;
+          }
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  

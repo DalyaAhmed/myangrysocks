@@ -29,13 +29,16 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        "@media screen and (min-width: 990px) {.header--middle-left .header__inline-menu {margin-left: 100px; font-family: sans-serif; }}"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "desktop",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-4",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": true,
         "enable_language_selector": true,

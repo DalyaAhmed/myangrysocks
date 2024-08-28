@@ -4,19 +4,46 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "text_zRxJjB": {
+          "type": "text",
+          "settings": {
+            "heading": "Arga strumpor",
+            "subtext": "<p>My Angry Socks är för alla oss som via ett par arga strumpor, vill visa världen att den kan dra åt helvete idag.  Vi tror på den mänskliga rättigheten att säga, tänka och visa känslor genom ett par arga eller roliga strumpor. Vår vision är att göra det enklare för dig att uttrycka dina känslor. Dolt eller öppet. Vår väg är genom färg, meddelande, humor och dina nya strumpor.<\/p>"
+          }
+        },
+        "link_list_6rfnmy": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Kontakt",
+            "menu": "kontakt"
+          }
+        },
+        "brand_information_VhAUJB": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        }
+      },
+      "block_order": [
+        "text_zRxJjB",
+        "link_list_6rfnmy",
+        "brand_information_VhAUJB"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "newsletter_enable": true,
+        "color_scheme": "scheme-4",
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
         "enable_follow_on_shop": true,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": true,
         "enable_language_selector": true,
         "payment_enable": true,
         "show_policy": true,
         "margin_top": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 16
       }
     }
   },

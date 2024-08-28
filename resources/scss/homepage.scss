@@ -1,0 +1,10 @@
+.shopify-section {
+    margin: 0 auto;
+    width: calc(100% - 50px); /* Reduces the margin on the sides */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    .banner__media {
+        height: 527px;
+    }
+}
