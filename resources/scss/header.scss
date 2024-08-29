@@ -92,10 +92,14 @@
     }
   }
 
+  .header__inline-menu ul.list-menu li a {
+    letter-spacing: 1px !important;
+}
 
 /* Set the background color of the first li element to red */
 .header__inline-menu ul.list-menu li:first-child {
     background-color: red;
+    
 }
 
 /* Change the background color of other li elements to red when hovered */
@@ -112,6 +116,7 @@
 .header__active-menu-item {
     text-decoration: none;    
 }
+
 
 /* Optionally, you can add a hover effect to the links to keep it consistent */
 .header__active-menu-item ul.list-menu li a:hover {

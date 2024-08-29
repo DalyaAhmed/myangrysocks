@@ -3566,3 +3566,10 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+.exo-2-custom-font {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600; 
+  font-style: normal;
+}
