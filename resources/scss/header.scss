@@ -21,7 +21,7 @@
   
   .header__icons {
     position: absolute;
-    right: 0; // Align the cart icon to the far right
+    right: 0; 
     margin-right: 30px;
   }
   
@@ -51,7 +51,7 @@
           display: flex;
           
           .list-menu__item {
-            margin: 0 10px; /* Adjust spacing between menu items */
+            margin: 0 5px; 
           }
         }
       }
@@ -92,22 +92,22 @@
     }
   }
 
-  .header__inline-menu ul.list-menu li a {
-    letter-spacing: 1px !important;
-}
+//   .header__inline-menu ul.list-menu li a {
+//     // letter-spacing: 1px !important;
+// }
 
-/* Set the background color of the first li element to red */
+
 .header__inline-menu ul.list-menu li:first-child {
     background-color: red;
     
 }
 
-/* Change the background color of other li elements to red when hovered */
+
 .header__inline-menu ul.list-menu li:hover {
     background-color: red;
 }
 
-/* reset the hover background for the first li */
+
 .header__inline-menu ul.list-menu li:first-child:hover {
     background-color: red; /* Keep the first li red even on hover */
 }
@@ -132,7 +132,10 @@
   }
   
     .header__menu-item:hover {
-        padding: 1.2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        margin-left: 0px;
+        margin-right: 0px;
         text-decoration: none;
         color: rgba(var(--color-foreground), .75);
     }

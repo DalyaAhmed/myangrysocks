@@ -2,16 +2,33 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "scheme-1"
       }
     },
+    "custom_liquid_xK9N8E": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".navigation {display: flex; justify-content: center; align-items: center; padding: 1px;}",
+        ".navigation ul {list-style: none; margin: 0; padding: 0; display: flex;}",
+        ".navigation li {margin: 0 15px;}",
+        ".navigation a {text-decoration: none; color: #333; color: #fff;}",
+        ".navigation a:hover {background: red; width: 40px; height: 90px;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"navigation\">\n    <ul>\n      {% for link in linklists.pagemenu.links %}\n        <li>{{ link.title | link_to: link.url }}<\/li>\n      {% endfor %}\n    <\/ul>\n<\/div>",
+        "color_scheme": "scheme-4",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 16,
+        "products_per_page": 28,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
@@ -31,6 +48,7 @@
   },
   "order": [
     "banner",
+    "custom_liquid_xK9N8E",
     "product-grid"
   ]
 }

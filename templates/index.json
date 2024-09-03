@@ -23,7 +23,7 @@
         "color_scheme": "scheme-2",
         "full_width": true,
         "padding_top": 32,
-        "padding_bottom": 68
+        "padding_bottom": 44
       }
     },
     "image_with_text_yDAL8B": {
@@ -60,7 +60,7 @@
       "custom_css": [
         ".image-with-text__media {border: none;}",
         "img {width: auto; height: auto;}",
-        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
         ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
@@ -76,7 +76,7 @@
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "padding_top": 40,
-        "padding_bottom": 8
+        "padding_bottom": 0
       }
     },
     "image_with_text_VniWgN": {

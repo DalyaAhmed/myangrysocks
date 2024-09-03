@@ -31,6 +31,36 @@
   endif
 -%}
 
+<!-- Include CSS directly in the file -->
+<style>
+/* Ensure card-wrapper is positioned relative to place the icon absolutely within it */
+.card-wrapper {
+  position: relative;
+}
+
+/* Position the icon at the bottom-right corner of the card-wrapper */
+.icon {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px;  /* Adjust as needed */
+  display: none; /* Hide by default */
+  z-index: 9999; /* Ensure it's above other content */
+}
+
+/* Show the icon when hovering over the card */
+.card-wrapper:hover .icon {
+  display: block;
+}
+
+/* Optionally style the SVG icon */
+.icon svg {
+  width: 40px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+</style>
+
+<!-- HTML Structure -->
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
   <div
     class="
@@ -112,6 +142,113 @@
         </div>
       {%- endif -%}
     </div>
+  </div>
+</div>
+
+
+<div class="card-wrapper">
+  <div class="card card--card">
+    <!-- Card content goes here -->
+  </div>
+  <!-- Icon positioned outside of the card, but still a child of card-wrapper for CSS targeting -->
+  <div class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="40px" viewBox="0 0 24 24" width="40px" fill="#EA3323">
+      <g>
+        <rect fill="none" height="24" width="24"/>
+        <path d="M18 6h-2c0-2.21-1.79-4-4-4S8 3.79 8 6H6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6-2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm6 16H6V8h2v2c0 .55.45 1 1 1s1-.45 1-1V8h4v2c0 .55.45 1 1 1s1-.45 1-1V8h2v12z"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- JavaScript to handle the hover effect -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const cardWrapper = document.querySelector('.card-wrapper');
+  const icon = document.querySelector('.icon');
+
+  if (cardWrapper && icon) {
+    cardWrapper.addEventListener('mouseover', function() {
+      icon.style.display = 'block';
+    });
+    cardWrapper.addEventListener('mouseleave', function() {
+      icon.style.display = 'none';
+    });
+  }
+});
+</script>
+
+    <div
+      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+    >
+      {%- if card_collection.featured_image -%}
+        <div class="card__media">
+          <div class="media media--transparent media--hover-effect">
+            <img
+              srcset="
+                {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
+                {%- if card_collection.featured_image.width >= 535 -%}{{ card_collection.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if card_collection.featured_image.width >= 750 -%}{{ card_collection.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if card_collection.featured_image.width >= 1000 -%}{{ card_collection.featured_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+                {%- if card_collection.featured_image.width >= 1500 -%}{{ card_collection.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if card_collection.featured_image.width >= 3000 -%}{{ card_collection.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {{ card_collection.featured_image | image_url }} {{ card_collection.featured_image.width }}w
+              "
+              src="{{ card_collection.featured_image | image_url: width: 1500 }}"
+              sizes="
+                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+                (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+                calc(100vw - 3rem)
+              "
+              alt="{{ card_collection.featured_image.alt | escape }}"
+              height="{{ card_collection.featured_image.height }}"
+              width="{{ card_collection.featured_image.width }}"
+              loading="lazy"
+              class="motion-reduce"
+            >
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if card_collection == blank -%}
+        <div class="card__media">
+          {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- else -%}
+        <div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading">
+              <a
+                {% if card_collection == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ card_collection.url }}"
+                {% endif %}
+                class="full-unstyled-link"
+              >
+                {%- if card_collection.title != blank -%}
+                  {{- card_collection.title | escape -}}
+                {%- else -%}
+                  {{ 'onboarding.collection_title' | t }}
+                {%- endif -%}
+                {%- if card_collection.description == blank -%}
+                  <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+                {%- endif %}
+              </a>
+            </h3>
+            {%- if card_collection.description != blank -%}
+              <p class="card__caption">
+                {{- card_collection.description | strip_html | truncatewords: 12 -}}
+                <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
+              </p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+
+    
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
       <div class="card__content">
         <div class="card__information">

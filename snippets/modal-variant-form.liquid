@@ -1,0 +1,119 @@
+<!-- Snippet: modal-variant-form.liquid -->
+
+<div class="image-with-text image-with-text--no-overlap isolate collapse-corners scroll-trigger animate--slide-in">
+  <div class="image-with-text__grid grid grid--gapless grid--1-col grid--3-col-tablet image-with-text__grid--reverse">
+    <div class="image-with-text__media-item image-with-text__media-item--small image-with-text__media-item--middle grid__item">
+      <div class="image-with-text__media image-with-text__media--small global-media-settings gradient color-scheme-2 media">
+        <img
+          src="//myangrysocks.myshopify.com/cdn/shop/files/Helvete-strumpor-scaled-e1690720055290-600x511-1_d8698785-f177-4a65-913d-86e1b1db64b6.png?v=1724787317&amp;width=1500"
+          alt=""
+          width="1500"
+          height="1644"
+        >
+      </div>
+    </div>
+    <div class="image-with-text__text-item grid__item">
+      <div
+        id="ImageWithText--template--23439828353290__image_with_text_yDAL8B"
+        class="image-with-text__content image-with-text__content--middle image-with-text__content--desktop-left image-with-text__content--mobile-left image-with-text__content--small content-container gradient color-scheme-2"
+      >
+        <h2 class="image-with-text__heading inline-richtext hxxl"><strong>FAN JÄVLAR HELVETE</strong></h2>
+        <div class="image-with-text__text rte body">
+          <h3>Strumpor</h3>
+          <h3><strong>Nu 89:-</strong></h3>
+        </div>
+        <button type="button" class="button button--primary" id="add-to-cart-button">Lägg i varukorg</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form -->
+<div id="variant-modal" class="variant-modal">
+  <div class="modal-content">
+    <form action="/cart/add" method="post" id="variant-form">
+      <select name="id" id="variant-size" placeholder="Välj ett alternativ">
+        <option value="" disabled selected>Välj ett alternativ</option>
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}">{{ variant.title }}</option>
+        {% endfor %}
+      </select>
+      <br>
+      <button type="submit" class="button button--primary">Beställ</button>
+      <button type="button" id="cancel-button" class="button button--secondary">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<!-- Inline CSS -->
+<style>
+  /* Modal Styling */
+  .variant-modal {
+    display: none;  /* Initially hide the modal */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+   background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 330px;
+    text-align: center;
+    height: 22rem;
+    margin-left: 4rem;
+  }
+
+  .button--secondary {
+    background-color: #ccc;
+    color: #333;
+    margin-left: 10px;
+  }
+
+  .button--primary {
+    background-color: red;
+    color: white;
+  }
+
+  #variant-size{
+    width: 30rem;
+    height: 5rem;
+    font-size: medium;
+  }
+
+  .button {
+    border: 0;
+    font: inherit;
+    color: #fff;
+    background-color: red;
+    padding: 10px;
+    cursor: pointer;
+  }
+</style>
+
+<!-- Inline JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Ensure the modal is hidden initially
+      document.getElementById('variant-modal').style.display = 'none';
+
+      // Show the modal when the "Lägg i varukorg" button is clicked
+      document.getElementById('add-to-cart-button').addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the default button behavior
+          console.log("Button clicked"); // Debugging line
+          document.getElementById('variant-modal').style.display = 'block';
+      });
+
+      // Hide the modal when the "Cancel" button is clicked
+      document.getElementById('cancel-button').addEventListener('click', function() {
+          document.getElementById('variant-modal').style.display = 'none';
+      });
+  });
+</script>

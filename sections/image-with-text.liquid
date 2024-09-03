@@ -1,17 +1,147 @@
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+        .section-{{ section.id }}-padding {
+          padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+          padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+        }
+
+        @media screen and (min-width: 750px) {
+          .section-{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+          }
+        }
+
+       /* Modal Styles */
+        form#cartForm{
+          display: flex;
+          flex-direction: column;
+          margin-top: 1px;
+        }
+      #cartForm #cancelButton {
+        border: 2px solid red;
+
+    }
+     #cancelButton {
+    font-weight: 900;
+    display: inline-block;
+    background: #fff; /* White background to create contrast with the red ring */
+    color: red; /* Red "X" color */
+    border: 1px solid red; /* Red border to create the ring */
+    border-radius: 50%; /* Circular shape */
+    width: 40px; /* Diameter of the button */
+    height: 40px;
+    text-align: center;
+    line-height: 40px; /* Center the text vertically */
+    position: absolute; /* Position it absolutely within the form */
+    right: 10px; /* Adjust position as needed */
+    top: 10px; /* Adjust position as needed */
+    cursor: pointer;
+    z-index: 1050; /* Ensure it’s on top of other elements */
+      margin-top: 15px;
+    left: 50px;
+    left: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: stretch;
+    /* float: right; */
+    position: absolute;
+    top: 105px;
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+
+        .modal {
+         display: block;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal__content {
+          background-color: #fff;
+          border: 1px solid #888;
+          max-width: 330px;
+          text-align: center;
+          height: 22rem;
+          margin-left: 16rem;
+          margin-top: 470px;
+        }
+
+        .modal.hidden {
+          display: none;
+        }
+
+        .modal__close {
+          background: none;
+
+          font-size: 24px;
+          cursor: pointer;
+          display: none;
+
+        }
+
+        #variant{
+          width: 30rem;
+          height: 5rem;
+          font-size: medium;
+        }
+
+        button.button{
+          width: 30rem;
+          height: 5rem;
+          margin-top: 15px;
+        }
+
+
+   #cancelButton:hover {
+    background: red; /* Red background on hover */
+    color: white; /* White "X" on hover */
+    border-color: red; /* Ensures the border remains red on hover */
   }
+
+    #cancelButton .material-symbols-outlined {
+    font-size: 24px; /* Size of the "X" icon */
+    color: red;
+  }
+
+   #cancelButton .material-symbols-outlined:over {
+    color: #fff; /* Ensure the icon is red */
+  }
+
+
+      /* Ensure the form is positioned relatively for the absolute button positioning */
+      #cartForm {
+          position: relative;
+      }
+
+   #cancelButton:hover {
+    background: red; /* Red background on hover */
+    color: white; /* White "X" on hover */
+    border-color: red; /* Ensures the border remains red on hover */
+  }
+
+    #cancelButton .material-symbols-outlined {
+    font-size: 24px; /* Size of the "X" icon */
+    color: red; /* Ensure the icon is red */
+  }
+
+     #cancelButton:hover .material-symbols-outlined {
+
+    color: white; /* Ensure the icon is red */
+  }
+
+
+      /* Ensure the form is positioned relatively for the absolute button positioning */
+      #cartForm {
+          position: relative;
+      }
 {%- endstyle -%}
 
 {%- liquid
@@ -87,10 +217,11 @@
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
                     <a
+                      id="openCartFormButton"
                       {% if block.settings.button_link == blank %}
                         role="link" aria-disabled="true"
                       {% else %}
-                        href="{{ block.settings.button_link }}"
+                        href="#"
                       {% endif %}
                       class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
                       {{ block.shopify_attributes }}
@@ -106,6 +237,60 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Form -->
+<div id="cartModal" class="modal hidden">
+  <div class="modal__content">
+    <button id="closeCartFormButton" class="modal__close">&times;</button>
+    <form id="cartForm" action="/cart/add" method="post">
+      <select id="variant" name="id" required>
+        <option value="" disabled selected>Välj ett alternativ</option>
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}">{{ variant.title }}</option>
+        {% endfor %}
+      </select>
+      <input type="hidden" name="id" value="1234567890">
+      <button type="submit" class="button button--primary">Beställa</button>
+      <button type="button" id="cancelButton">
+        <span class="material-symbols-outlined">x</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal JavaScript -->
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const openButton = document.getElementById('openCartFormButton');
+    const modal = document.getElementById('cartModal');
+    const closeButton = document.getElementById('closeCartFormButton'); // Ensure this ID matches the HTML
+    const cancelButton = document.getElementById('cancelButton');
+
+    if (openButton && modal && closeButton && cancelButton) {
+      // Open the modal
+      openButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.classList.remove('hidden');
+      });
+
+      // Close the modal
+      closeButton.addEventListener('click', function() {
+        modal.classList.add('hidden');
+      });
+
+      cancelButton.addEventListener('click', function() {
+        modal.classList.add('hidden');
+      });
+
+      // Close modal if clicking outside of it
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.classList.add('hidden');
+        }
+      });
+    }
+  });
+</script>
 
 {% schema %}
 {

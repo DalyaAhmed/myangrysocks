@@ -112,6 +112,12 @@
                 wrapper_class: section.settings.card_styles,
                 placeholder_image: placeholder_image
               %}
+
+              
+{% render 'page-collection' %}
+
+
+
             {%- when 'video' -%}
               <div class="collage-card {% if section.settings.card_styles == 'none' %}global-media-settings{% else %}{{ section.settings.card_styles }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
                 <modal-opener data-modal="#PopupModal-{{ block.id }}">
@@ -422,3 +428,6 @@
   ]
 }
 {% endschema %}
+
+
+{% render 'page-collection' %}
