@@ -92,7 +92,7 @@
         "text_jnbnVP": {
           "type": "text",
           "settings": {
-            "text": "<h2>En bra deal!<\/h2><h2><strong>269:- och fri frakt.<\/strong><\/h2>",
+            "text": "<h3>En bra deal!<\/h3><h3><strong>269:- och fri frakt.<\/strong><\/h3>",
             "text_style": "body"
           }
         },
@@ -100,7 +100,7 @@
           "type": "button",
           "settings": {
             "button_label": "Lägg i varukorg",
-            "button_link": "",
+            "button_link": "shopify:\/\/products\/tre-svenska-favorit-strumpor-till-herr-och-dam",
             "button_style_secondary": false
           }
         }
@@ -111,7 +111,10 @@
         "button_nLV6BY"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/herr-strumpor-scaled-e1703847631956-600x512-med-sko_80d0f598-0cb5-4889-b769-00d0de9ba9f7.png",
@@ -161,7 +164,10 @@
         "button_RcggNN"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/roliga-ankelstrumpor-pms-scaled-e1690728460418-600x511-1_3e88a663-0a3c-4c87-bb61-d4b3f9df969c.png",
@@ -211,7 +217,10 @@
         "button_yjBqXb"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/IMG_1819-scaled-e1703157102221-600x512-1.png",
@@ -261,7 +270,10 @@
         "button_PE3NGK"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/jag-tar-ingen-skit-scaled-e1712417627913-600x512-1_69ce73e7-ebf2-4d6a-a981-18ebc8e077e9.png",
@@ -281,6 +293,12 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "custom_css": [
+        ".color-scheme-2 {display: flex;}",
+        ".color-scheme-2 ul {display: flex; flex-wrap: nowrap; width: 250%; margin-left: 75px;}",
+        "h2.title.h1 {text-align: center; color: black; font-family: \"Exo 2\", Sans-serif; font-size: 50px; font-weight: 600; line-height: 75px; letter-spacing: 7.8px; padding-left: 200px; margin: 0;}",
+        "a.button{margin-right: 200px; font-size: 15px; font-family: 'Exo 2', sans-serif; color: #fff; font-weight: 600;}"
+      ],
       "settings": {
         "title": "Fri frakt",
         "heading_size": "h1",
@@ -288,9 +306,9 @@
         "show_description": false,
         "description_style": "subtitle",
         "collection": "roliga-strumpor",
-        "products_to_show": 25,
+        "products_to_show": 2,
         "columns_desktop": 2,
-        "full_width": true,
+        "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
@@ -339,7 +357,10 @@
         "button_BwyH9V"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_84d73716-6eee-463e-8378-7e06f227e804.png",
@@ -389,7 +410,10 @@
         "button_7qqYnj"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/rolig-julklapp-med-strumpor.png",
@@ -467,7 +491,10 @@
         "button_Rdgjnr"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/IMG_8702-scaled-e1668714548448-600x511-1.png",
@@ -545,7 +572,10 @@
         "button_RfzJTU"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/My-Angry-Socks-orginalpresent-scaled-e1707557504172-600x512-1.png",
@@ -595,7 +625,10 @@
         "button_mU9Mpg"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/roliga-herr-och-dam-strumpor-scaled-e1712685639151-600x512-med-sko.webp",
@@ -645,7 +678,10 @@
         "button_gTyqWN"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/eat-my-shit-putin_b169ba25-efd8-461d-ba08-9a941b1befb0.png",
@@ -695,7 +731,10 @@
         "button_DtkEyf"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/happy-socks-i-present-scaled-e1712416627502-600x512-1_6c73be96-c2c8-463b-b0d9-77b6251acfe3.png",
@@ -887,7 +926,10 @@
         "button_xpeNkK"
       ],
       "custom_css": [
-        ".image-with-text__media {border: none;}"
+        ".image-with-text__media {border: none;}",
+        "img {width: auto; height: auto;}",
+        ".button {color: white; border: none; padding: 15px 30px; font-size: 20px; opacity: 100; background-color: red;}",
+        ".button:hover {background-color: #ffffff; color: #000000; border-color: black;}"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/IMG_9917-scaled-e1687507257697-600x511-1.png",

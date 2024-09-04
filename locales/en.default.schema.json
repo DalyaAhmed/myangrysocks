@@ -636,7 +636,7 @@
           "label": "Number of columns on desktop"
         },
         "show_view_all": {
-          "label": "Enable \"View all\" button if list includes more collections than shown"
+          "label": "Enable \"Shoppa fler strumpor >\" button if list includes more collections than shown"
         },
         "header_mobile": {
           "content": "Mobile Layout"

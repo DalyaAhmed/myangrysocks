@@ -409,23 +409,6 @@
   padding-bottom: 50px;
 }
 
-/* Responsive Design for Small Screens */
-
-@media (max-width: 600px) {
-  .navigation ul#product-grid {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
-  }
-  .navigation li {
-    margin: 5px 0; /* Reduce space between items */
-    font-size: 12px; /* Make the font size smaller */
-  }
-  .navigation a {
-    font-size: 13px; /* Reduce link font size */
-    padding: 5px; /* Decrease padding for a tighter fit */
-  }
-}
-
 #collection-info {
   text-align: center;
   font-family: Exo 2, sans-serif;

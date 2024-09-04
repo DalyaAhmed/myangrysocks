@@ -27,8 +27,13 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "custom_css": [
+        ".quick-add__submit.button {display: none; \/* Hide the button initially *\/}",
+        "li.grid__item:hover .quick-add__submit.button {display: block; \/* Show the button on hover *\/ background: red;}",
+        ".card.card--card{background-color: #f1f1f1;}"
+      ],
       "settings": {
-        "products_per_page": 28,
+        "products_per_page": 36,
         "columns_desktop": 4,
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
@@ -36,7 +41,7 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
