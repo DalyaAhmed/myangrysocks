@@ -99,12 +99,15 @@
                 {%- when '@app' -%}
                   {% render block %}
                 {%- when 'text' -%}
+
+              
                   <p
                     class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                     {{ block.shopify_attributes }}
                   >
                     {{- block.settings.text -}}
                   </p>
+                
                 {%- when 'title' -%}
                   <h2 class="product__title {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
                     {%- unless placeholder -%}
@@ -448,6 +451,14 @@
       </div>
       {% render 'product-media-modal', product: product, variant_images: variant_images %}
     </div>
+
+
+
+
+
+
+
+
   </section>
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>

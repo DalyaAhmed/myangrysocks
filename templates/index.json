@@ -297,7 +297,7 @@
         ".color-scheme-2 {display: flex;}",
         ".color-scheme-2 ul {display: flex; flex-wrap: nowrap; width: 250%; margin-left: 75px;}",
         "h2.title.h1 {text-align: center; color: black; font-family: \"Exo 2\", Sans-serif; font-size: 50px; font-weight: 600; line-height: 75px; letter-spacing: 7.8px; padding-left: 200px; margin: 0;}",
-        "a.button{margin-right: 200px; font-size: 15px; font-family: 'Exo 2', sans-serif; color: #fff; font-weight: 600;}"
+        "a.button {margin-right: 200px; font-size: 15px; font-family: \"Exo 2\", sans-serif; color: #fff; font-weight: 600;}"
       ],
       "settings": {
         "title": "Fri frakt",
@@ -433,15 +433,21 @@
     },
     "featured_collection_WDaBwP": {
       "type": "featured-collection",
+      "custom_css": [
+        ".color-scheme-2 {display: flex;}",
+        ".color-scheme-2 ul {display: flex; flex-wrap: nowrap; width: 190%; margin-left: 75px;}",
+        "h2.title.h1 {text-align: center; color: black; font-family: \"Exo 2\", Sans-serif; font-size: 50px; font-weight: 600; line-height: 75px; letter-spacing: 7.8px; padding-left: 200px; margin: 0;}",
+        "a.button {margin-right: 200px; font-size: 15px; font-family: \"Exo 2\", sans-serif; color: #fff; font-weight: 600;}"
+      ],
       "settings": {
         "title": "Succé! Över 10 000 har beställt roliga strumpor 2024. Gör det du också!",
-        "heading_size": "h0",
+        "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "roliga-strumpor",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "products_to_show": 2,
+        "columns_desktop": 2,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
@@ -514,6 +520,12 @@
     },
     "featured_collection_yRG4VR": {
       "type": "featured-collection",
+      "custom_css": [
+        ".color-scheme-2 {display: flex;}",
+        ".color-scheme-2 ul {display: flex; flex-wrap: nowrap; width: 250%; margin-left: 75px;}",
+        "h2.title.h1 {text-align: center; color: black; font-family: \"Exo 2\", Sans-serif; font-size: 50px; font-weight: 600; line-height: 75px; letter-spacing: 7.8px; padding-left: 200px; margin: 0;}",
+        "a.button {margin-right: 200px; font-size: 15px; font-family: \"Exo 2\", sans-serif; color: #fff; font-weight: 600;}"
+      ],
       "settings": {
         "title": "Presenttips",
         "heading_size": "h0",
@@ -521,13 +533,13 @@
         "show_description": false,
         "description_style": "body",
         "collection": "annat",
-        "products_to_show": 4,
+        "products_to_show": 2,
         "columns_desktop": 4,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -773,6 +785,9 @@
         "heading_P9EBeF",
         "text_QA3Pcn"
       ],
+      "custom_css": [
+        "strong {color: #fff;}"
+      ],
       "settings": {
         "desktop_content_position": "left",
         "content_alignment": "left",
@@ -780,6 +795,40 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 60
+      }
+    },
+    "featured_collection_WXrMwY": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".color-scheme-2 {display: flex;}",
+        ".color-scheme-2 ul {display: flex; flex-wrap: nowrap; width: 250%; margin-left: 75px;}",
+        "h2.title.h1 {text-align: center; color: black; font-family: \"Exo 2\", Sans-serif; font-size: 50px; font-weight: 600; line-height: 75px; letter-spacing: 7.8px; padding-left: 200px; margin: 0;}",
+        "a.button {margin-right: 200px; font-size: 15px; font-family: \"Exo 2\", sans-serif; color: #fff; font-weight: 600;}"
+      ],
+      "settings": {
+        "title": "Multipack med strumpor",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "multipack",
+        "products_to_show": 4,
+        "columns_desktop": 2,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection_8t9Ahp": {
@@ -966,6 +1015,7 @@
     "image_with_text_qDHKaE",
     "image_with_text_nBbJwy",
     "rich_text_9CD8ey",
+    "featured_collection_WXrMwY",
     "featured_collection_8t9Ahp",
     "featured_collection_7bBHQH",
     "featured_collection_q6hdjt",

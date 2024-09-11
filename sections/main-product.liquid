@@ -37,6 +37,30 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+
+
+
+
+    .tablinks {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.tablinks.active {
+  background-color: #ccc;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+  border-top: none;
+}
+
+
+
+
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -71,6 +95,7 @@
       onload="this.media='all'"
     >
   {%- endif -%}
+
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
@@ -119,6 +144,9 @@
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                   </div>
                 {%- endif -%}
+
+
+                {%comment%}
                 {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
                   <div class="product__tax caption rte">
                     {%- if cart.duties_included and cart.taxes_included -%}
@@ -133,6 +161,10 @@
                     {%- endif -%}
                   </div>
                 {%- endif -%}
+                {%endcomment%}
+
+
+
                 <div {{ block.shopify_attributes }}>
                   {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                   {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -140,6 +172,8 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
+
+
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -195,12 +229,17 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+
+              {%comment%}
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
                   </div>
                 {%- endif -%}
+              {%endcomment%}
+
+
               {%- when 'sku' -%}
                 <p
                   class="product__sku{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -231,6 +270,8 @@
                     </div>
                   </details>
                 </div>
+
+            
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -440,6 +481,12 @@
                     </volume-pricing>
                   {%- endif -%}
                 </div>
+          
+
+
+
+
+
               {%- when 'popup' -%}
                 <modal-opener
                   class="product-popup-modal__opener quick-add-hidden"
@@ -662,6 +709,137 @@
             {{ 'products.product.view_full_details' | t }}
             {% render 'icon-arrow' %}
           </a>
+
+
+
+
+
+
+
+<div class="tabs">
+  <button class="tablinks" onclick="openTab(event, 'beskrivning')">BESKRIVNING</button>
+  <button class="tablinks" onclick="openTab(event, 'information')">YTTERLIGARE INFORMATION</button>
+  <button class="tablinks" onclick="openTab(event, 'recensioner')">RECENSIONER</button>
+</div>
+
+<!-- Tab content -->
+<div id="beskrivning" class="tabcontent">
+  <h2>Beskrivning</h2>
+  <p>{{ product.description }}</p> <!-- Fetches product description from Shopify -->
+</div>
+
+
+
+<ul>
+  {% for metafield in product.metafields %}
+    <li>{{ metafield.namespace }} - {{ metafield.key }}: {{ metafield.value }}</li>
+  {% endfor %}
+</ul>
+
+<div id="information" class="tabcontent" style="display:none;">
+  <h2>Ytterligare Information</h2>
+  <p> 
+    <strong>Vikt:</strong> {{ product.metafields.vikt }} g<br>  
+    <strong>Dimensioner:</strong> {{ product.metafields.dimensioner }}<br>
+    <strong>Storlek:</strong> {{ product.metafields.storlek }}<br>
+  </p>
+</div>
+
+<!-- Reviews Tab Content -->
+<div id="recensioner" class="tabcontent" style="display:none;">
+  <h2>Recensioner</h2>
+
+  {% for review in product.metafields.reviews %}
+    <div class="ezrv-widget_review_listing_row">
+      
+      <!-- User Information -->
+      <div class="ezrv-widget_review_listing_user">
+        <label class="ezrv-widget_review_user">{{ review.review_author }}</label>
+        <label class="ezrv-widget_review_date">{{ review.review_date | date: "%d %b %Y" }}</label>
+      </div>
+
+      <!-- Star Ratings -->
+      <div class="ezrv-widget_review_row">
+        <div class="ezrv-widget_review_rating_option">
+          
+          <!-- Overall Rating -->
+          <div class="ezrv-container-display-star">
+            <div class="ezrv-display-star-title">Overall</div>
+            <div class="ezrv-widget_rating_star_content">
+              <span style="width: {{ review.review_rating_overall | times: 20 }}%"></span>
+            </div>
+          </div>
+          
+  
+
+        </div>
+      </div>
+
+      <!-- Review Content -->
+      <div class="ezrv-widget_review_content">
+        <div class="ezrv-widget_review_content_title">
+          <label>{{ review.review_title }}</label>
+        </div>
+        <div class="ezrv-widget_review_content_value">{{ review.review_content }}</div>
+      </div>
+      
+    </div>
+  {% else %}
+    <p>No reviews yet.</p>
+  {% endfor %}
+</div>
+
+
+
+{% include 'related-products' %}
+
+
+
+
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <product-recommendations
+    class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+  >
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+      <ul
+        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+        role="list"
+      >
+        {% assign skip_card_product_styles = false %}
+        {% for recommendation in recommendations.products %}
+          <li class="grid__item">
+            {% render 'card-product',
+              card_product: recommendation,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              skip_styles: skip_card_product_styles
+            %}
+          </li>
+          {%- assign skip_card_product_styles = true -%}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </product-recommendations>
+  {% if section.settings.image_shape == 'arch' %}
+    {% render 'mask-arch' %}
+  {%- endif -%}
+</div>
+
+
+
+
+
+
         </section>
       </div>
     </div>
@@ -714,11 +892,43 @@
       endif
     -%}
 
-    <script type="application/ld+json">
-      {{ product | structured_data }}
-    </script>
-  </div>
-</product-info>
+
+
+<script type="application/ld+json">
+  {{ product | structured_data }}
+</script>
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+
+  // Hide all tab content
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove active class from all tabs
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the clicked tab content
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Load the BESKRIVNING tab by default on page load
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".tablinks").click();
+});
+</script>
+
+
+
+
+
 
 {% schema %}
 {
@@ -2251,6 +2461,8 @@
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
+
+
   ]
 }
 {% endschema %}

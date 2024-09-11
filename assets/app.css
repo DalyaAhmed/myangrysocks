@@ -1,85 +1,78 @@
 .header-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
   height: 70px;
+  padding-top: 5px;
+}
+
+.header {
+  padding-top: 0px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header__heading {
   position: absolute;
-  left: 0;
-  margin-left: 30px;
+  left: 30px;
 }
 
 .header__inline-menu {
-  margin: 0 auto;
   font-family: sans-serif;
+  position: fixed;
+  width: 972px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  inset-inline-start: 354px;
+  background-color: var(--gradient-background);
 }
 
-.header__icons {
-  position: absolute;
-  right: 0;
-  margin-right: 30px;
-}
-
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000; /* Ensure the header stays on top */
-  background-color: #000000; /* Adjust background as needed */
-  border-bottom: 1px solid #ddd; /* Optional border */
-}
-
-.sticky-header .header {
+.header__inline-menu ul.list-menu {
+  list-style: none;
+  padding: 0;
   display: flex;
-  justify-content: space-between; /* Distribute space between logo and cart */
-  align-items: center;
-  padding: 10px 20px; /* Adjust padding as needed */
+  justify-content: center;
+  margin: 0;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #000000;
+  border-bottom: 1px solid #ddd;
+}
+
+.fixed-header .header {
+  justify-content: space-between;
   width: 100%;
 }
 
-.sticky-header .header .header__inline-menu {
-  flex: 1; /* Allow this to grow and take up space */
+.fixed-header .header #shopify-section-sections--23534535475466__header .header--middle-left .header__inline-menu {
+  flex: 1;
   display: flex;
-  justify-content: center; /* Center the nav items */
-}
-
-.sticky-header .header .header__inline-menu .list-menu {
-  list-style: none;
+  justify-content: center;
   margin: 0;
-  padding: 0;
-  display: flex;
 }
 
-.sticky-header .header .header__inline-menu .list-menu .list-menu__item {
-  margin: 0 5px;
-}
-
-.sticky-header .header .header__heading {
+.fixed-header .header .header__heading {
   display: flex;
   align-items: center;
-  margin-right: auto; /* Push logo to the right */
+  margin-right: auto;
 }
 
-.sticky-header .header .header__heading .header__heading-link {
-  display: flex;
-  align-items: center;
-}
-
-.sticky-header .header .header__heading .header__heading-link img {
+.fixed-header .header .header__heading .header__heading-link img {
   max-width: 100%;
-  height: auto; /* Ensure logo scales properly */
+  height: auto;
 }
 
-.sticky-header .header .menu-drawer__utility-links {
+.fixed-header .header .menu-drawer__utility-links {
   display: flex;
   align-items: center;
-  margin-left: auto; /* Push cart icon to the right */
+  margin-left: auto;
 }
 
-.sticky-header .header .menu-drawer__utility-links .menu-drawer__account {
-  margin-left: 10px; /* Adjust spacing if needed */
+.fixed-header .header .menu-drawer__utility-links .menu-drawer__account {
+  margin-left: 10px;
 }
 
 .header__icon--cart {
@@ -99,19 +92,15 @@
 }
 
 .header__inline-menu ul.list-menu li:first-child:hover {
-  background-color: red; /* Keep the first li red even on hover */
+  background-color: red;
 }
-
-/* Remove the underline from all the links in the navigation menu */
 
 .header__active-menu-item {
   text-decoration: none;
 }
 
-/* Optionally, you can add a hover effect to the links to keep it consistent */
-
 .header__active-menu-item ul.list-menu li a:hover {
-  text-decoration: none; /* Ensures no underline appears on hover */
+  text-decoration: none;
 }
 
 #cart-icon-bubble {
@@ -123,11 +112,15 @@
   fill: #ffffff;
 }
 
+.headeer__icons {
+  position: fixed;
+}
+
 .header__menu-item:hover {
   padding-left: 4rem;
   padding-right: 4rem;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0;
+  margin-right: 0;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
 }
@@ -314,10 +307,9 @@
   font-size: 18px;
   font-weight: 600;
   color: #FFFFFF;
-  background-color: var(--e-global-color-primary);
+  background-color: red;
   border-style: solid;
   border-width: 2px;
-  border-color: var(--e-global-color-primary);
   border-radius: 0px;
   padding: 15px 40px;
   text-decoration: none;
@@ -385,7 +377,6 @@
 }
 
 .color-scheme-4 .navigation li {
-  margin: 0 10px;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -407,6 +398,7 @@
   margin-left: 80px;
   margin-top: -40px;
   padding-bottom: 50px;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 #collection-info {
@@ -459,4 +451,21 @@
   #collection-description {
     font-size: 0.9rem;
   }
+}
+
+.product__inventory {
+  display: none;
+}
+
+.product.product--small.product--left {
+  margin-top: -30px;
+  background-color: #EBEBEB;
+}
+
+.product .product__info-wrapper {
+  background-color: #EBEBEB;
+}
+
+.product .grid__item.product__media-wrapper {
+  background-color: #f8f8f8;
 }

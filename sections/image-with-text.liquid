@@ -1,105 +1,104 @@
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-.section-{{ section.id }}-padding {
-  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-}
-
-@media screen and (min-width: 750px) {
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-}
 
-/* Modal Styles */
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  /* Modal Styles */
 
 
-.modal__content {
-    background-color: #fff;
-    border: none;
-    max-width: 330px;
+  .modal__content {
+      background-color: #fff;
+      border: none;
+      max-width: 330px;
+      text-align: center;
+      height: 22rem;
+      margin-top: 450px;
+      top: 0;
+      margin-left: 70px;
+
+  }
+
+  .modal.hidden {
+    display: none;
+  }
+
+  .modal__close {
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+
+  /* Cancel Button Styles */
+  #cancelButton {
+    font-weight: 900;
+    display: inline-block;
+    background: #fff; /* White background to contrast with the red ring */
+    color: red; /* Red "X" color */
+    border: 2px solid red; /* Red border */
+    border-radius: 50%; /* Circular shape */
+    width: 40px; /* Diameter of the button */
+    height: 40px;
     text-align: center;
-    height: 22rem;
-    margin-top: 450px;
-    top: 0;
-    margin-left: 70px;
- 
-}
+    line-height: 40px; /* Center the text vertically */
+    position: absolute; /* Position it absolutely within the modal content */
+    right: 10px; /* Adjust as needed */
+    top: 10px; /* Adjust as needed */
+    cursor: pointer;
+    z-index: 1050; /* Ensure it's on top of other elements */
+    margin-top: 110px;
+      display: flex;
+      justify-content: center;
+      align-content: stretch;
+      flex-wrap: nowrap;
+      align-items: center;
+  }
 
-.modal.hidden {
-  display: none;
-}
+  #cancelButton:hover {
+    background: red; /* Red background on hover */
+    color: white; /* White "X" on hover */
+    border-color: red; /* Red border on hover */
+  }
 
-.modal__close {
-  background: none;
-  font-size: 24px;
-  cursor: pointer;
-  display: none;
-}
+  #cancelButton .material-symbols-outlined {
+    font-size: 24px; /* Size of the "X" icon */
+    color: red; /* Initial icon color */
+  }
 
-/* Cancel Button Styles */
-#cancelButton {
-  font-weight: 900;
-  display: inline-block;
-  background: #fff; /* White background to contrast with the red ring */
-  color: red; /* Red "X" color */
-  border: 2px solid red; /* Red border */
-  border-radius: 50%; /* Circular shape */
-  width: 40px; /* Diameter of the button */
-  height: 40px;
-  text-align: center;
-  line-height: 40px; /* Center the text vertically */
-  position: absolute; /* Position it absolutely within the modal content */
-  right: 10px; /* Adjust as needed */
-  top: 10px; /* Adjust as needed */
-  cursor: pointer;
-  z-index: 1050; /* Ensure it's on top of other elements */
-  margin-top: 110px;
+  #cancelButton:hover .material-symbols-outlined {
+    color: white; /* Icon color on hover */
+  }
+
+  /* Form Styles */
+  form#cartForm {
     display: flex;
-    justify-content: center;
-    align-content: stretch;
-    flex-wrap: nowrap;
-    align-items: center;
-}
+    flex-direction: column;
+    margin-top: 1px;
+    position: relative; /* Ensure relative positioning for absolute cancel button */
+  }
 
-#cancelButton:hover {
-  background: red; /* Red background on hover */
-  color: white; /* White "X" on hover */
-  border-color: red; /* Red border on hover */
-}
+  #variant {
+    width: 30rem;
+    height: 5rem;
+    font-size: medium;
+  }
 
-#cancelButton .material-symbols-outlined {
-  font-size: 24px; /* Size of the "X" icon */
-  color: red; /* Initial icon color */
-}
-
-#cancelButton:hover .material-symbols-outlined {
-  color: white; /* Icon color on hover */
-}
-
-/* Form Styles */
-form#cartForm {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1px;
-  position: relative; /* Ensure relative positioning for absolute cancel button */
-}
-
-#variant {
-  width: 30rem;
-  height: 5rem;
-  font-size: medium;
-}
-
-button.button {
-  width: 30rem;
-  height: 5rem;
-  margin-top: 15px;
-}
+  button.button {
+    width: 30rem;
+    height: 5rem;
+    margin-top: 15px;
+  }
 {%- endstyle -%}
-
 
 {%- liquid
   assign fetch_priority = 'auto'
@@ -195,28 +194,19 @@ button.button {
   </div>
 </div>
 
-
-
-{% assign selected_product = all_products[section.settings.selected_product] %}
-
-<!-- Debugging Code to Check Product Data -->
-{% if selected_product %}
-  <p>Selected product: {{ selected_product.title }}</p>
-  <p>Number of variants: {{ selected_product.variants.size }}</p>
-{% else %}
-  <p>No product selected or product data is missing.</p>
-{% endif %}
-
-
 <!-- Modal Form -->
 <div id="cartModal" class="modal hidden">
   <div class="modal__content">
     <form id="cartForm" action="/cart/add" method="post">
       <select id="variant" name="id" required>
         <option value="" disabled selected>Välj ett alternativ</option>
-        {% for variant in product.variants %}
-          <option value="{{ variant.id }}">{{ variant.title }}</option>
-        {% endfor %}
+        {% if selected_product %}
+          {% for variant in selected_product.variants %}
+            <option value="{{ variant.id }}">{{ variant.title }}</option>
+          {% endfor %}
+        {% else %}
+          <option disabled>No variants available</option>
+        {% endif %}
       </select>
       <button type="submit" class="button button--primary">Beställa</button>
       <button type="button" id="cancelButton" aria-label="Close">
@@ -226,36 +216,34 @@ button.button {
   </div>
 </div>
 
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const openButton = document.getElementById('openCartFormButton');
-  const modal = document.getElementById('cartModal');
-  const cancelButton = document.getElementById('cancelButton');
+  document.addEventListener('DOMContentLoaded', function() {
+    const openButton = document.getElementById('openCartFormButton');
+    const modal = document.getElementById('cartModal');
+    const cancelButton = document.getElementById('cancelButton');
 
-  console.log('DOM content loaded');
+    console.log('DOM content loaded');
 
-  if (openButton && modal && cancelButton) {
-    console.log('Elements found');
+    if (openButton && modal && cancelButton) {
+      console.log('Elements found');
 
-    // Open the modal
-    openButton.addEventListener('click', function(event) {
-      event.preventDefault();
-      console.log('Open button clicked');
-      modal.classList.remove('hidden');
-    });
+      // Open the modal
+      openButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        console.log('Open button clicked');
+        modal.classList.remove('hidden');
+      });
 
-    // Close the modal
-    cancelButton.addEventListener('click', function() {
-      console.log('Cancel button clicked');
-      modal.classList.add('hidden');
-    });
-  } else {
-    console.log('One or more elements are missing');
-  }
-});
+      // Close the modal
+      cancelButton.addEventListener('click', function() {
+        console.log('Cancel button clicked');
+        modal.classList.add('hidden');
+      });
+    } else {
+      console.log('One or more elements are missing');
+    }
+  });
 </script>
-
 
 {% schema %}
 {

@@ -192,19 +192,23 @@
         
         
           <div class="quick-add no-js-hidden"><product-form data-section-id="template--23534539276554__product-grid"><form method="post" action="/cart/add" id="quick-add-template--23534539276554__product-grid9651942162698" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form"><input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="id" value="49821439721738" class="product-variant-id">
-                  <button id="quick-add-template--23534539276554__product-grid9651942162698-submit" type="submit" name="add" class="quick-add__submit button button--full-width button--secondary" aria-haspopup="dialog" aria-labelledby="quick-add-template--23534539276554__product-grid9651942162698-submit title-template--23534539276554__product-grid-9651942162698" aria-live="polite" data-sold-out-message="true">
-                    <span>Add to cart
+                  <button id="quick-add-template--23534539276554__product-grid9651942129930-submit" type="submit" name="add" class="quick-add__submit button button--full-width button--secondary" aria-haspopup="dialog" aria-labelledby="quick-add-template--23534539276554__product-grid9651942129930-submit title-template--23534539276554__product-grid-9651942129930" aria-live="polite" data-sold-out-message="true">
+  <span class="material-symbols-outlined">
+Add to cart
 </span>
-                    <span class="sold-out-message hidden">
-                      Sold out
-                    </span>
+ 
+  <span class="sold-out-message hidden">Sold out</span>
+  <div class="loading__spinner hidden">
+    <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+      <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+    </svg>
+  </div>
+</button>
 
-<div class="loading__spinner hidden">
-  <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-  </svg>
-</div>
-</button><input type="hidden" name="product-id" value="9651942162698"><input type="hidden" name="section-id" value="template--23534539276554__product-grid"></form></product-form></div>
+
+
+
+<input type="hidden" name="product-id" value="9651942162698"><input type="hidden" name="section-id" value="template--23534539276554__product-grid"></form></product-form></div>
         
         <div class="card__badge top left"></div>
       </div>
@@ -256,6 +260,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+
+{%comment%}
   // Event listeners for each Add to Cart button
   addToCartButtons.forEach(function(button) {
     button.addEventListener('click', function(e) {
@@ -289,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
+{%endcomment%}
 
 
 

@@ -1,145 +1,133 @@
-
-
 .header-wrapper {
-    position: relative; // Set relative positioning to enable absolute positioning for children
+  height: 70px;
+  padding-top: 5px;
+}
+
+.header {
+  padding-top: 0px;
+  // display: flex;
+  justify-content: space-between; // Space between logo and navigation
+  align-items: center;
+}
+
+.header__heading {
+  position: absolute;
+  left: 30px; // Align the logo to the far left with margin
+}
+
+.header__inline-menu {
+  
+  font-family: sans-serif;
+  position: fixed;
+    width: 972px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    // top: 42px;
+    inset-inline-start: 354px;
+    background-color:var(--gradient-background);
+
+  ul.list-menu {
+    list-style: none;
+    padding: 0;
     display: flex;
-    align-items: center;
-    padding: 0 20px; 
-    height: 70px; 
+    justify-content: center; // Ensure the ul stays centered
+    margin: 0; // Remove default margin
   }
-  
-  .header__heading {
-    position: absolute;
-    left: 0; // Align the logo to the far left
-    margin-left: 30px;
+
+  ul.list-menu li {
+    // margin: 0 10px; // Spacing between menu items
   }
-  
-  .header__inline-menu {
-    margin: 0 auto; // Center the navigation menu horizontally
-    font-family: sans-serif;
-  }
-  
-  .header__icons {
-    position: absolute;
-    right: 0; 
-    margin-right: 30px;
-  }
-  
-.sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Ensure the header stays on top */
-    background-color: #000000; /* Adjust background as needed */
-    border-bottom: 1px solid #ddd; /* Optional border */
-    
-    .header {
+}
+
+.fixed-header {
+  position: fixed; // Fix the header in place
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #000000; // Background color for the fixed header
+  border-bottom: 1px solid #ddd;
+
+  .header {
+    justify-content: space-between; // Ensure space is between elements
+    width: 100%;
+
+    #shopify-section-sections--23534535475466__header .header--middle-left .header__inline-menu {
+      flex: 1;
       display: flex;
-      justify-content: space-between; /* Distribute space between logo and cart */
+      justify-content: center; // Center nav items
+      margin: 0; // Reset margin
+    }
+
+    .header__heading {
+      display: flex;
       align-items: center;
-      padding: 10px 20px; /* Adjust padding as needed */
-      width: 100%;
-  
-      .header__inline-menu {
-        flex: 1; /* Allow this to grow and take up space */
-        display: flex;
-        justify-content: center; /* Center the nav items */
-        
-        .list-menu {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          
-          .list-menu__item {
-            margin: 0 5px; 
-          }
-        }
+      margin-right: auto;
+
+      .header__heading-link img {
+        max-width: 100%;
+        height: auto;
       }
-  
-      .header__heading {
-        display: flex;
-        align-items: center;
-        margin-right: auto; /* Push logo to the right */
-        
-        .header__heading-link {
-          display: flex;
-          align-items: center;
-  
-          img {
-            max-width: 100%;
-            height: auto; /* Ensure logo scales properly */
-          }
-        }
-      }
-      
-      .menu-drawer__utility-links {
-        display: flex;
-        align-items: center;
-        margin-left: auto; /* Push cart icon to the right */
-  
-        .menu-drawer__account {
-          margin-left: 10px; /* Adjust spacing if needed */
-        }
+    }
+
+    .menu-drawer__utility-links {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+
+      .menu-drawer__account {
+        margin-left: 10px;
       }
     }
   }
+}
 
-  .header__icon--cart {
-    background-color: red;
-  
-    &:hover {
-      background-color: transparent !important; // Adding !important for higher specificity
-    }
+.header__icon--cart {
+  background-color: red;
+
+  &:hover {
+    background-color: transparent !important;
   }
-
-//   .header__inline-menu ul.list-menu li a {
-//     // letter-spacing: 1px !important;
-// }
-
+}
 
 .header__inline-menu ul.list-menu li:first-child {
-    background-color: red;
-    
+  background-color: red;
 }
-
 
 .header__inline-menu ul.list-menu li:hover {
-    background-color: red;
+  background-color: red;
 }
-
 
 .header__inline-menu ul.list-menu li:first-child:hover {
-    background-color: red; /* Keep the first li red even on hover */
+  background-color: red;
 }
 
-/* Remove the underline from all the links in the navigation menu */
 .header__active-menu-item {
-    text-decoration: none;    
+  text-decoration: none;
 }
 
-
-/* Optionally, you can add a hover effect to the links to keep it consistent */
 .header__active-menu-item ul.list-menu li a:hover {
-    text-decoration: none; /* Ensures no underline appears on hover */
+  text-decoration: none;
 }
 
 #cart-icon-bubble {
-    background-color: red; // Set the background color to red
-    padding: 8px; // Optional: Add some padding to make it look better
-    svg {
-      fill: #ffffff; // Ensure the icon color stays white
-    }
-  }
-  
-    .header__menu-item:hover {
-        padding-left: 4rem;
-        padding-right: 4rem;
-        margin-left: 0px;
-        margin-right: 0px;
-        text-decoration: none;
-        color: rgba(var(--color-foreground), .75);
-    }
-   
+  background-color: red;
+  padding: 8px;
 
-  
-  
+  svg {
+    fill: #ffffff;
+  }
+}
+
+.headeer__icons{
+  position: fixed;
+}
+
+.header__menu-item:hover {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-left: 0;
+  margin-right: 0;
+  text-decoration: none;
+  color: rgba(var(--color-foreground), .75);
+}

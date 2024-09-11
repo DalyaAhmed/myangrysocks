@@ -143,6 +143,8 @@
           </div>
         </div>
       </div>
+
+
       <div class="card__content">
         <div class="card__information">
           <h3
@@ -439,7 +441,7 @@
               </modal-opener>
               <modal-dialog
                 id="QuickAddBulk-{{ card_product.id }}-{{ section_id }}"
-                class="quick-add-modal color-{{ section.settings.color_scheme }}"
+                class="quick-add-modal"
               >
                 <div
                   role="dialog"
@@ -456,6 +458,7 @@
                   >
                     {% render 'icon-close' %}
                   </button>
+                  
                   <div
                     id="QuickAddInfo-{{ card_product.id }}"
                     class="quick-add-modal__content-info quick-add-modal__content-info--bulk"
@@ -572,6 +575,9 @@
       assign ratio = 0.8
     endif
   -%}
+
+ {%comment%}
+
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -599,6 +605,8 @@
           </div>
         </div>
       </div>
+
+     
       <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
@@ -616,5 +624,7 @@
         </div>
       </div>
     </div>
+
+    {%endcomment%}
   </div>
 {%- endif -%}
