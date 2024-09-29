@@ -298,6 +298,8 @@
     </script>
 
     <link href="{{ 'app.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ 'responsive-max-width-480.css' | asset_url }}">
+
     <script src="{{ 'app.js' | asset_url }}" defer="defer"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -309,8 +311,10 @@
       rel="stylesheet"
     >
 
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    >
 
     <style>
       h1, h2, li {
@@ -320,7 +324,7 @@
           font-weight: 600;
           line-height: 75px;
           letter-spacing: 7.8px;
-          
+
       }
 
       p {
@@ -343,10 +347,11 @@
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-      {{ 'accessibility.skip_to_text' | t }}
-    </a>
-
+    {% comment %}
+      <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+        {{ 'accessibility.skip_to_text' | t }}
+      </a>
+    {% endcomment %}
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
     {%- endif -%}
@@ -416,11 +421,5 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-
-   
   </body>
 </html>
-
-
-
-

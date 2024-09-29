@@ -1,0 +1,15 @@
+.product__inventory {
+  display: none;
+}
+
+.product.product--small.product--left {
+  margin-top: -30px;
+  background-color: #EBEBEB;
+}
+
+.product .product__info-wrapper {
+  background-color: #EBEBEB;
+}
+.product .grid__item.product__media-wrapper {
+  background-color: #f8f8f8;
+}/*# sourceMappingURL=product-page.css.map */

@@ -1,0 +1,207 @@
+/* Extra small screens (e.g., very small smartphones) */
+@media (max-width: 480px) {
+  /*Rich text*/
+  #shopify-section-template--23618388197642__rich_text_rVhGJA .rich-text {
+    height: auto;
+    letter-spacing: 1px;
+    white-space: normal; /* Allow text to wrap */
+    margin-left: 0px;
+  }
+
+  .rich-text__heading {
+    margin-left: 120px;
+    font-size: 20px; /* Further adjust heading font size */
+  }
+
+  .rich-text__text {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  /*Collection Section*/
+  .slider-mobile-gutter {
+    margin-left: -51px;
+    width: 425px;
+  }
+
+  #shopify-section-template--23618388197642__image_with_text_VniWgN {
+    margin-top: 246px;
+    height: 644px;
+    border-width: 20px;
+    padding-right: -26px;
+    margin-left: -23px;
+  }
+
+  .rte > *:last-child {
+    margin-top: 9px;
+  }
+
+  .image-with-text__text h3 {
+    font-family: "Exo 2", Sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 31px;
+    letter-spacing: 1px;
+    margin-top: -21px;
+    margin-left: -5px;
+  }
+
+  .button.button--primary {
+    margin-left: -4px;
+  }
+
+  #ImageWithText--template--23618388197642__image_with_text_VniWgN h2 strong {
+    white-space: normal;
+    font-size: -19px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.8px;
+    margin-top: 30px;
+  }
+
+  #collection-title {
+    font-size: 1.75rem;
+  }
+
+  #collection-description {
+    font-size: 0.9rem;
+  }
+
+  .product__inventory {
+    display: none;
+  }
+
+  .product.product--small.product--left {
+    margin-top: -30px;
+    background-color: #ebebeb;
+  }
+
+  .product .product__info-wrapper {
+    background-color: #ebebeb;
+  }
+
+  .product .grid__item.product__media-wrapper {
+    background-color: #f8f8f8;
+  }
+
+  /* Header wrapper adjustments */
+  sticky-header.header-wrapper.color-scheme-4.gradient.header-wrapper--border-bottom,
+  header.header.header--top-left.header--mobile-left {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  /* Logo adjustments */
+  .header__heading-logo-wrapper {
+    width: 80px; /* Further reduce logo size */
+    height: 18px;
+  }
+
+  img.header__heading-logo.motion-reduce {
+    width: 80px;
+  }
+
+  /* Navigation adjustments */
+  a#HeaderMenu-startsida {
+    font-size: 12px; /* Smaller font for very small screens */
+    padding: 8px 12px; /* Adjust padding */
+  }
+
+  /* Icon adjustments */
+  .header__icons {
+    top: 8px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+  }
+
+  div.desktop-localization-wrapper {
+    width: 25px;
+    height: 25px;
+  }
+
+  .image-with-text__text-item .image-with-text__content h2 {
+    margin-left: -6px;
+    margin-top: -45px;
+    width: 153px;
+    line-height: 16px;
+  }
+
+  .image-with-text__grid {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+
+  .shopify-section.section .color-scheme-2.isolate.gradient {
+    margin-top: 300px;
+    height: 370px;
+  }
+
+  .collection.section-template--23618388197642__featured_collection_Mj9EFG-padding {
+    width: 375px;
+    height: 366px;
+  }
+
+  div.collection__title {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 30px 0px;
+    text-align: center;
+  }
+
+  div.collection__title h2 {
+    width: 375px;
+    height: 26px;
+    font-size: 20px;
+  }
+
+  h2.title.inline-richtext.h0.scroll-trigger.animate--slide-in strong {
+    font-size: 20px;
+    line-height: 1.3em;
+    letter-spacing: 3.6px;
+    font-weight: 600;
+  }
+
+  ul.contains-card {
+    width: 481px;
+    height: 366px;
+    margin-left: 30px;
+  }
+  slider-component.slider-mobile-gutter {
+    height: 335px;
+  }
+
+  .card__information {
+    margin-left: -29px;
+  }
+
+  div.shopify-section.section {
+    margin-top: 0px;
+  }
+
+  a.button {
+    margin-left: -107px;
+    margin-top: -2px;
+  }
+
+  ul li.grid__item.scroll-trigger.animate--slide-in {
+    width: 800px;
+    border-style: none;
+    margin-right: -25px;
+  }
+
+  .section-template--23618388197642__image_with_text_VniWgN-padding {
+    padding-top: 277px;
+    padding-bottom: 27px;
+  }
+}

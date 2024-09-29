@@ -31,19 +31,23 @@
         "link_list_6rfnmy",
         "brand_information_VhAUJB"
       ],
+      "custom_css": [
+        ".footer__blocks-wrapper > div:nth-of-type(3) {width: 356px; height: 226px; }",
+        ".footer-block__brand-info {width: 350px; height: 226px; position: absolute;}"
+      ],
       "settings": {
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-3",
         "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "show_social": false,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "payment_enable": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
         "show_policy": true,
-        "margin_top": 0,
-        "padding_top": 40,
-        "padding_bottom": 16
+        "margin_top": 16,
+        "padding_top": 32,
+        "padding_bottom": 12
       }
     }
   },

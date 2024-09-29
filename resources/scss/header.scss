@@ -1,133 +1,179 @@
-.header-wrapper {
-  height: 70px;
-  padding-top: 5px;
-}
-
-.header {
-  padding-top: 0px;
-  // display: flex;
-  justify-content: space-between; // Space between logo and navigation
-  align-items: center;
-}
-
-.header__heading {
-  position: absolute;
-  left: 30px; // Align the logo to the far left with margin
-}
-
-.header__inline-menu {
-  
-  font-family: sans-serif;
-  position: fixed;
-    width: 972px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    // top: 42px;
-    inset-inline-start: 354px;
-    background-color:var(--gradient-background);
-
-  ul.list-menu {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center; // Ensure the ul stays centered
-    margin: 0; // Remove default margin
-  }
-
-  ul.list-menu li {
-    // margin: 0 10px; // Spacing between menu items
-  }
-}
-
-.fixed-header {
-  position: fixed; // Fix the header in place
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: #000000; // Background color for the fixed header
-  border-bottom: 1px solid #ddd;
-
-  .header {
-    justify-content: space-between; // Ensure space is between elements
-    width: 100%;
-
-    #shopify-section-sections--23534535475466__header .header--middle-left .header__inline-menu {
-      flex: 1;
-      display: flex;
-      justify-content: center; // Center nav items
-      margin: 0; // Reset margin
-    }
-
-    .header__heading {
-      display: flex;
-      align-items: center;
-      margin-right: auto;
-
-      .header__heading-link img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
-
-    .menu-drawer__utility-links {
-      display: flex;
-      align-items: center;
-      margin-left: auto;
-
-      .menu-drawer__account {
-        margin-left: 10px;
-      }
-    }
-  }
-}
-
-.header__icon--cart {
-  background-color: red;
-
-  &:hover {
-    background-color: transparent !important;
-  }
-}
-
-.header__inline-menu ul.list-menu li:first-child {
-  background-color: red;
-}
-
-.header__inline-menu ul.list-menu li:hover {
-  background-color: red;
-}
-
-.header__inline-menu ul.list-menu li:first-child:hover {
-  background-color: red;
-}
-
-.header__active-menu-item {
-  text-decoration: none;
-}
-
-.header__active-menu-item ul.list-menu li a:hover {
-  text-decoration: none;
-}
-
-#cart-icon-bubble {
-  background-color: red;
-  padding: 8px;
-
-  svg {
-    fill: #ffffff;
-  }
-}
-
-.headeer__icons{
-  position: fixed;
-}
-
-.header__menu-item:hover {
-  padding-left: 4rem;
-  padding-right: 4rem;
-  margin-left: 0;
-  margin-right: 0;
-  text-decoration: none;
-  color: rgba(var(--color-foreground), .75);
-}
+// .header-wrapper {
+//   height: 66px;
+//   // padding-top: 5px;
+//  }
+ 
+ 
+//  .header {
+//   padding-top: 0px;
+//   // display: flex;
+//   justify-content: space-between; // Space between logo and navigation
+//   align-items: center;
+ 
+ 
+//   }
+ 
+ 
+//  .header__heading {
+//   position: absolute;
+//   left: 30px; // Align the logo to the far left with margin
+//  }
+ 
+ 
+//  .header__inline-menu {
+//    font-family: sans-serif;
+//   position: fixed;
+//     width: 972px;
+//     margin-top: 0px;
+//     margin-bottom: 0px;
+//     // top: 42px;
+//     inset-inline-start: 354px;
+//     background-color:var(--gradient-background);
+ 
+ 
+ 
+ 
+//  .header__inline-menu:hover {
+//   text-decoration: none;
+//  }
+//   ul.list-menu {
+//     list-style: none;
+//     padding: 0;
+//     display: flex;
+//     justify-content: center; // Ensure the ul stays centered
+//     margin: 0; // Remove default margin
+//   }
+ 
+ 
+//   ul.list-menu li {
+//     // margin: 0 10px; // Spacing between menu items
+//     text-decoration: none;
+//   }
+ 
+ 
+//   ul.list-menu li:hover {
+//     // margin: 0 10px; // Spacing between menu items
+//     text-decoration: none;
+//   }
+//  }
+ 
+ 
+//  .fixed-header {
+//   position: fixed; // Fix the header in place
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   z-index: 1000;
+//   background-color: #000000; // Background color for the fixed header
+//   border-bottom: 1px solid #ddd;
+ 
+ 
+//   .header {
+//     justify-content: space-between; // Ensure space is between elements
+//     width: 100%;
+ 
+ 
+//     #shopify-section-sections--23534535475466__header .header--middle-left .header__inline-menu {
+//       flex: 1;
+//       display: flex;
+//       justify-content: center; // Center nav items
+//       margin: 0; // Reset margin
+//     }
+ 
+ 
+//     .header__heading {
+//       display: flex;
+//       align-items: center;
+//       margin-right: auto;
+ 
+ 
+//       .header__heading-link img {
+//         max-width: 100%;
+//         height: auto;
+//       }
+//     }
+ 
+ 
+//     .menu-drawer__utility-links {
+//       display: flex;
+//       align-items: center;
+//       margin-left: auto;
+ 
+ 
+//       .menu-drawer__account {
+//         margin-left: 10px;
+//       }
+//     }
+//   }
+//  }
+ 
+ 
+//  .header__icon--cart {
+//   background-color: red;
+ 
+ 
+//   &:hover {
+//     background-color: transparent !important;
+//   }
+//  }
+ 
+ 
+//  .header__inline-menu ul.list-menu li:first-child {
+//   background-color: red;
+//  }
+ 
+ 
+//  .header__inline-menu ul.list-menu li:hover {
+//   background-color: red;
+//   text-decoration: none;
+//  }
+ 
+ 
+//  .header__inline-menu ul.list-menu li a:hover {
+//   background-color: red;
+//   text-decoration: none;
+//  }
+ 
+ 
+//  .header__inline-menu ul.list-menu li:first-child:hover {
+//   background-color: red;
+//   text-decoration: none;
+//  }
+ 
+ 
+//  .header__active-menu-item {
+//   text-decoration: none;
+//  }
+ 
+ 
+//  .header__active-menu-item ul.list-menu li a:hover {
+//   text-decoration: none;
+//   }
+ 
+ 
+//  #cart-icon-bubble {
+//   background-color: red;
+//   padding: 8px;
+ 
+ 
+//   svg {
+//     fill: #ffffff;
+//   }
+//  }
+ 
+ 
+//  .headeer__icons{
+//   position: fixed;
+//  }
+ 
+ 
+//  .header__menu-item:hover {
+//   padding-left: 4rem;
+//   padding-right: 4rem;
+//   margin-left: 0;
+//   margin-right: 0;
+//   text-decoration: none;
+//   color: rgba(var(--color-foreground), .75);
+//   text-decoration: none;
+//  }
+ 

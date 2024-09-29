@@ -30,10 +30,10 @@
     "header": {
       "type": "header",
       "custom_css": [
-        "@media screen and (min-width: 990px) {.header--middle-left .header__inline-menu {margin-left: 100px; font-family: sans-serif; }}"
+        "@media screen and (min-width: 990px) {.header--middle-left .header__inline-menu {font-family: sans-serif; }}"
       ],
       "settings": {
-        "logo_position": "middle-left",
+        "logo_position": "top-left",
         "menu": "desktop",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
@@ -43,7 +43,7 @@
         "enable_country_selector": true,
         "enable_language_selector": true,
         "enable_customer_avatar": true,
-        "mobile_logo_position": "center",
+        "mobile_logo_position": "left",
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20

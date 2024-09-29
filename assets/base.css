@@ -1109,8 +1109,7 @@ summary::-webkit-details-marker {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+ 
 }
 
 .media > img {
@@ -2331,7 +2330,7 @@ input[type='checkbox'] {
 /* Main Header Layout */
 .header-wrapper {
   display: block;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   position: relative;
   background-color: rgb(var(--color-background));
 }
@@ -3110,7 +3109,7 @@ details-disclosure > details {
 }
 
 .rte > *:first-child {
-  margin-top: 0;
+  
 }
 
 .rte > *:last-child {

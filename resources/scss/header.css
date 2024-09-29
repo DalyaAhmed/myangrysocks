@@ -1,0 +1,157 @@
+/*# sourceMappingURL=header.css.map */
+
+/*Home Page*/
+
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+/*Header*/
+div.shopify-section.shopify-section-group-header-group.section-header{
+  height: 66px;
+}
+sticky-header.header-wrapper.color-scheme-4.gradient.header-wrapper--border-bottom{
+  height: 66px;
+  background-color: #000;
+}
+
+header.header.header--middle-left.header--mobile-left.page-width.header--has-menu.header--has-social.header--has-account{
+   height: 66px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+padding-right: 30px;
+}
+
+h1.header__heading {
+
+  height: 46px;
+  width: 324px; 
+}
+
+div.header__heading-logo-wrapper{
+   height: 36px;
+  width: 300px;
+}
+
+img.header__heading-logo.motion-reduce{
+  height: 36px;
+  width: 240px;
+}
+
+nav.header__inline-menu{
+  position: fixed;
+    width: 972px;
+    height: 46px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    top: 10px;
+    inset-inline-start: 354px;
+  background-color: #000;
+}
+
+ul.list-menu.list-menu--inline{    
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header__inline-menu ul.list-menu li:first-child {
+  background-color: red;
+  
+}
+
+
+li.elementor-item elementor-item-active{
+  width: 113.13px;
+    height: 46px;
+}
+
+a#HeaderMenu-startsida {
+    text-decoration: none;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+padding-right: 20px;
+  font-family: "Exo 2", Sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  color: #FFFFFF;
+  fill: #FFFFFF;
+  top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   
+}
+
+a#HeaderMenu-startsida:hover {
+    text-decoration: none;
+  background-color: red;
+     
+}
+
+.header__active-menu-item {
+    text-decoration: none;
+}
+
+a span {
+    
+    text-decoration: none; 
+    color: #FFFFFF;
+  font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  margin-inline-end:;
+      margin-inline-start: var(--e-nav-menu-horizontal-menu-item-margin);
+}
+
+li:hover{
+  background-color: red;
+}
+
+a.header__menu-item.list-menu__item.link.link--text.focus-inset:hover span {
+     text-decoration: none;
+    
+}
+div.header__icons.header__icons--localization.header-localization{
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  display: inline-flex;
+  position: fixed;
+}
+
+/*cart icon*/
+div.desktop-localization-wrapper{
+  width: 20px;
+  height: 20px;
+ 
+}
+
+a#cart-icon-bubble{
+   width: 50px;
+  height: 50px;
+}
+
+svg{
+  width: 20px;
+  height: 20px;
+}
+
+div.cart-count-bubble{
+ top: 3px;
+}
+
+.cart-count-bubble span{
+  color: black;
+  font-size: 10px;
+}
+
+div.header__icons.header__icons--localization.header-localization:hover {
+  background-color: transparent; /* Remove background when hovered */
+}
+
+
