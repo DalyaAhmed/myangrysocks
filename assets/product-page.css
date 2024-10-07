@@ -1,0 +1,484 @@
+.product-info-text img {
+  width: 20%;
+  vertical-align: middle;
+  display: inline-block;
+  height: auto;
+  margin-top: -29px;
+  margin-bottom: 64px;
+}
+
+.product-info-text h2 {
+  font-family: "Exo 2", Sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+}
+
+.product-details__short-description ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+}
+
+.product-details__short-description ul li {
+  font-size: 20px;
+  font-weight: 400;
+  swiper-navigation-size: 44px;
+  margin-top: -42px;
+  letter-spacing: 0px;
+}
+
+.product__info-wrapper.grid__item {
+  background-color: #ebebeb;
+}
+
+.product.product--small.product--left.product--thumbnail {
+  margin-top: -37px;
+}
+
+.grid__item.product__media-wrapper {
+  background-color: #f8f8f8;
+  margin-right: 30px;
+}
+
+modal-opener img {
+  height: auto;
+  max-width: 100%;
+}
+
+li modal-opener button {
+  border: none;
+}
+
+ul img {
+  border: none;
+}
+slider-component#GalleryThumbnails-template--23618388361482__main {
+  background: none !important;
+  border: none !important;
+}
+
+.grid__item.product__media-wrapper .slider-mobile-gutter {
+  width: 374px;
+  margin-left: -35px;
+  margin-top: -2px;
+}
+
+.thumbnail-slider.slider-mobile-gutter.quick-add-hidden.small-hide.thumbnail-slider--no-slide {
+  padding-left: 26%;
+  margin-left: -37px;
+  margin-top: 49px;
+}
+/*
+.product.product--small.product--left.product--thumbnail ul {
+  margin-top: -50px;
+}
+*/
+.product.product--small.product--left.product--thumbnail ul li {
+  border: none;
+}
+
+.slider-mobile-gutter
+  .product-media-container.media-type-image.media-fit-contain.global-media-settings.gradient.constrain-height {
+  border: none;
+}
+
+.product__info-container {
+  width: 857px;
+  padding: 71px;
+  margin-left: -52px;
+}
+
+.thumbnail-slider.slider-mobile-gutter.quick-add-hidden.small-hide {
+  width: 282px;
+  margin-left: 54px;
+}
+
+.thumbnail-list__item.slider__slide {
+  margin-right: -6px;
+  background-color: transparent;
+}
+
+.product__info-container .product__title h1 {
+  ont-size: 30px;
+  font-weight: 600;
+  clear: none;
+  margin-top: 0;
+  padding: -7px;
+  letter-spacing: 1px;
+}
+
+.shopify-block.shopify-app-block {
+  color: #cccccc60;
+  font-size: 20px;
+  width: auto;
+  display: inline-block;
+  margin-top: 0px;
+}
+
+.ezrv-widget-container {
+  margin-top: -21px;
+}
+
+.price.price--large.price--on-sale.price--show-badge {
+  margin-left: -25px;
+  margin-top: -23px;
+}
+
+.price.price--large.price--on-sale.price--show-badge .price__container {
+  margin: 0;
+  text-align: left;
+  order: 1;
+  font-family: "Exo 2", Sans-serif;
+  font-size: 20px;
+  text-decoration: auto;
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--e-global-color-text);
+  border-radius: 0;
+  padding: 0 0 10px 30px;
+  color: black;
+}
+
+.price__regular .price-item.price-item--regular {
+  color: black;
+}
+
+span.price-item.price-item--sale.price-item--last {
+  color: black;
+  text-decoration: underline;
+  margin-left: -4px;
+}
+
+.price.price--large.price--on-sale.price--show-badge .price__container {
+  letter-spacing: 3px;
+}
+
+.price__sale span:nth-of-type(2) {
+  color: #757575;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.product__modal-opener.product__modal-opener--image {
+  padding: 9%;
+  margin-top: 20px;
+}
+
+variant-selects {
+  background-color: #e3e3e3;
+  width: 653px;
+  height: 69px;
+}
+
+table {
+  background-color: #80808012;
+  width: 900px;
+  margin-block-end: 15px;
+  font-size: 0.9em;
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 66px;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+
+th table {
+  border: 0;
+  line-height: 2em;
+  vertical-align: top;
+}
+
+th label {
+  font-size: 15px;
+  margin-left: 83px;
+}
+
+td select {
+  width: 675px;
+  height: 43px;
+  margin-left: 62px;
+  margin-top: 14px;
+}
+
+select {
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1.5;
+  padding: 10px;
+}
+
+/* the quality field*/
+
+/* Style the quantity input field */
+.quantity__input {
+  width: 58px;
+  height: 50px;
+  text-align: center;
+  border: 2px solid #1a73e8; /* Blue border */
+  border-radius: 4px;
+  font-size: 20px;
+  box-sizing: border-box;
+  outline: none;
+  padding: 0;
+  appearance: none; /* Hide arrows initially */
+}
+
+/* Show spinner arrows only on hover */
+.quantity__input:hover {
+  appearance: number-input;
+}
+
+/* Style the input when focused (with border effect) */
+.quantity__input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Blue glow on focus */
+}
+
+/* Force visibility of spinner buttons on hover for Webkit browsers */
+.quantity__input:hover::-webkit-inner-spin-button,
+.quantity__input:hover::-webkit-outer-spin-button {
+  -webkit-appearance: inner-spin-button; /* Show arrows */
+  opacity: 1;
+}
+
+/* Hide the spinner arrows in Webkit browsers when not hovered */
+.quantity__input::-webkit-inner-spin-button,
+.quantity__input::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Hide by default */
+  margin: 0;
+}
+
+/* Make sure Firefox hides the spinner arrows */
+.quantity__input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.product-form__buttons .product-form__submit {
+  margin-top: -72px;
+  height: 50px;
+  width: 825px;
+  margin-left: 76px;
+}
+/*Tab section*/
+.product__info-container tab .tablinks {
+  background-color: #eae6ed;
+}
+
+.tablinks.active {
+  background-color: #ffffff;
+}
+
+label.screen-reader-text {
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Remove the border for the input field */
+.input-text.qty.text {
+  border: none; /* Remove the border */
+  box-shadow: none; /* Remove any shadow (if applied by the browser) */
+  outline: none; /* Remove the outline when focused */
+  background-color: transparent; /* Make background transparent if needed */
+  font-size: 16px; /* Adjust font size */
+  padding: 5px; /* Add some padding if needed */
+  width: 50px; /* Adjust width as required */
+  text-align: center; /* Align text in the center */
+}
+
+/* Add border on focus if needed */
+.input-text.qty.text:focus {
+  border: 1px solid #1a73e8; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Optional shadow effect */
+}
+
+/* Adjust height and border-radius */
+.quantity {
+  border-radius: 3px; /* Keep or adjust border-radius for the container */
+  width: 54px;
+}
+
+.tabcontent h2 {
+  display: block;
+  margin-block-start: 0.5rem;
+  margin-block-end: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: inherit;
+  space-letter: 10px;
+  letter-spacing: 0px;
+  margin-top: 12px;
+}
+
+.tabcontent {
+  padding: 0;
+}
+
+#beskrivning {
+  margin-top: -33px;
+}
+
+.tabcontent p {
+  font-size: 15px !important;
+  width: 951px !important;
+}
+
+.tabcontent ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+}
+
+.tabcontent ul li {
+  font-size: 15px !important;
+  font-weight: normal !important;
+  line-height: normal !important;
+  letter-spacing: 0px !important;
+  color: #5e5e5e;
+}
+
+.section-template--23618388361482__main-padding .related-products {
+  background-color: #ebebeb;
+}
+
+.related-products ul li.grid__item .card-wrapper .card {
+  background-color: #ebebeb;
+}
+
+#MainContent {
+  margin-bottom: -27px;
+}
+
+.related-products .price__regular .price-item.price-item--regular {
+  color: red;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+.related-products .price__sale span:nth-of-type(2) {
+  color: #757575;
+  text-decoration: line-through;
+  margin-right: 8px;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-style: italic;
+}
+
+.related-products .price__container .price-item {
+  color: red !important;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 54px;
+}
+
+.price .price__container .price-item {
+  margin-left: -30px;
+}
+
+.related-products ul li a {
+  margin: -31px 0 0;
+  padding: 30px 2px 0 30px;
+  text-align: left;
+  order: 1;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-left: -30px;
+}
+
+.related-products .card__inner {
+  margin-left: -30px;
+}
+
+.related-products .badge {
+  display: inline-block;
+  background-color: red;
+  color: #ebeef0;
+  left: auto;
+  float: 30px;
+  font-size: 30px;
+  top: 0;
+  right: 0;
+  left: auto;
+  margin: -0.5em -0.5em 0 0;
+  min-height: 3.236em;
+  min-width: 3.236em;
+  padding: 0.202em;
+  font-weight: 700;
+  position: absolute;
+  text-align: center;
+  top: -0.5em;
+  margin: 0;
+  border-radius: 99%;
+  color: #fff;
+  z-index: 9;
+  line-height: -1px;
+}
+
+.related-products {
+  margin-top: -89px;
+  padding-bottom: 67px;
+}
+
+select {
+  width: 100%;
+  border: 1px solid #666;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s;
+}
+modal-opener.product__modal-opener.product__modal-opener--image {
+  overflow: hidden;
+  position: relative;
+  border-radius: 0px 0px 0px 0px;
+  width: 1200%;
+  transform: translate3d(0px, 0px, 0px);
+  transition: all cubic-bezier(0.795, -0.035, 0, 1) 0.5s;
+  width: 328.32px;
+  float: left;
+  display: block;
+}
+
+.product__media.media.media--transparent img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: none;
+}
+
+/* Ensure the image container has no background */
+#Slider-Thumbnails-template--23618388361482__main .thumbnail-list__item,
+#Slider-Thumbnails-template--23618388361482__main .thumbnail {
+  background-color: transparent !important; /* Force transparent background */
+}
+
+/* Make sure the images themselves don't have a background */
+#Slider-Thumbnails-template--23618388361482__main .thumbnail img {
+  background-color: transparent !important; /* Ensure the image has no background */
+  border: none !important; /* Remove any borders */
+}
+
+/* Ensure the parent ul and li elements also have no background */
+#Slider-Thumbnails-template--23618388361482__main {
+  background-color: transparent !important; /* Set the entire slider background to transparent */
+}

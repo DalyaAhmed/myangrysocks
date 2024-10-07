@@ -27,6 +27,11 @@
           "settings": {
           }
         },
+        "judge_me_reviews_preview_badge_3TYWMQ": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -71,6 +76,13 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "custom_liquid_Yg8wVE": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"color-{{ section.settings.color_scheme }} gradient\">\n  <product-recommendations\n    class=\"related-products-snippet page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}\"\n    data-url=\"{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}\"\n    data-section-id=\"{{ section.id }}\"\n    data-product-id=\"{{ product.id }}\"\n  >\n    {% if recommendations.performed and recommendations.products_count > 0 %}\n      <h2 class=\"related-products-snippet__heading inline-richtext {{ section.settings.heading_size }}\">\n        {{ section.settings.heading }}\n      <\/h2>\n      <ul\n        class=\"grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down\"\n        role=\"list\"\n      >\n        {% assign skip_card_product_styles = false %}\n        {% for recommendation in recommendations.products %}\n          <li class=\"grid__item\">\n            {% render 'card-product',\n              card_product: recommendation,\n              media_aspect_ratio: section.settings.image_ratio,\n              image_shape: section.settings.image_shape,\n              show_secondary_image: section.settings.show_secondary_image,\n              show_vendor: section.settings.show_vendor,\n              show_rating: section.settings.show_rating,\n              skip_styles: skip_card_product_styles\n            %}\n          <\/li>\n          {%- assign skip_card_product_styles = true -%}\n        {% endfor %}\n      <\/ul>\n    {% endif %}\n  <\/product-recommendations>\n  {% if section.settings.image_shape == 'arch' %}\n    {% render 'mask-arch' %}\n  {%- endif -%}\n<\/div>"
+          }
         }
       },
       "block_order": [
@@ -78,13 +90,18 @@
         "title",
         "rating_LcpEjh",
         "easyreviews_star_rating_PyycLE",
+        "judge_me_reviews_preview_badge_3TYWMQ",
         "price",
         "inventory_GKnkLF",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "custom_liquid_Yg8wVE"
+      ],
+      "custom_css": [
+        ".ezrv-widget_rating_star_content {font-size: 16px; margin-top: -50px;}"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -100,12 +117,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "1725569116ea45e932": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
       }
     },
     "related-products": {
@@ -128,11 +139,17 @@
         "padding_top": 24,
         "padding_bottom": 36
       }
+    },
+    "1725569116ea45e932": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
-    "1725569116ea45e932",
-    "related-products"
+    "related-products",
+    "1725569116ea45e932"
   ]
 }

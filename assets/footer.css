@@ -1,0 +1,137 @@
+/*Footer*/
+footer.footer {
+  height: 427px;
+  background: #000000;
+}
+.footer__content-top {
+  height: 427px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 0px;
+}
+.footer__blocks-wrapper {
+  width: 1400px;
+  height: 226px;
+  margin-left: 90px;
+  margin-right: 90px;
+  padding-left: 100px;
+  padding-bottom: 100px;
+}
+
+h2.footer-block__heading.inline-richtext {
+  color: #ffffff;
+  font-family: "Exo 2", Sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  height: 40px;
+}
+.footer-block__details-content.rte p {
+  color: #ffffff;
+  font-family: "Exo 2", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  width: 690px;
+  height: 162px;
+}
+.footer-block.grid__item.footer-block--menu.scroll-trigger.animate--slide-in {
+  width: 230px;
+  height: 226px;
+}
+ul.footer-block--menu {
+  width: 230px;
+  height: 144px;
+  margin-top: -24px;
+}
+
+ul.footer-block__details-content.list-unstyled li {
+  width: 230px;
+  height: 27px;
+}
+
+ul.footer-block__details-content.list-unstyled li a:hover {
+  width: 230px;
+  height: 27px;
+  text-decoration: none;
+  color: red;
+}
+ul.footer-block__details-content.list-unstyled li a {
+  font-family: "Exo 2", Sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #ffffff;
+  transition: color 0.3s;
+  margin-top: -21px;
+}
+
+.footer__blocks-wrapper {
+  margin-top: 10px;
+  height: 426px;
+}
+.footer-block.grid__item.scroll-trigger.animate--slide-in {
+  width: 740px;
+  height: 226px;
+  margin-top: 26px;
+  margin-left: -127px;
+}
+
+.footer__blocks-wrapper > div:nth-of-type(3) {
+  width: 350px;
+  height: 226px;
+}
+.footer-block__brand-info h2 {
+  color: #ffffff;
+  font-family: "Exo 2", Sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  width: 356px;
+}
+
+ul.list-unstyled.list-social.footer__list-social {
+  margin-left: -30px;
+}
+
+ul.list-unstyled.list-social.footer__list-social li {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+  margin-top: -22px;
+}
+
+ul.list-unstyled.list-social.footer__list-social li a svg {
+  color: #000000;
+  width: 30px;
+  height: 60px;
+}
+.footer__content-top {
+  margin-left: 19px;
+  margin-top: 20px;
+}
+
+ul.footer-block__details-content {
+  margin-top: -32px;
+}
+.footer-block.grid__item.footer-block--menu.scroll-trigger.animate--slide-in {
+  width: 230px;
+  height: 226px;
+  margin-left: 97px;
+}
+#shopify-section-sections--23618384003338__footer .footer-block__brand-info {
+  width: 350px;
+  height: 226px;
+  position: absolute;
+  margin-left: 127px;
+}
+
+#shopify-section-sections--23618384003338__footer footer.footer.color-scheme-4 {
+  height: 426px;
+  margin-top: 152px;
+}

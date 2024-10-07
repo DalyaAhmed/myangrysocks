@@ -9,6 +9,7 @@
     data-zoom-on-hover
   {% endif %}
 >
+  
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -37,7 +38,6 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
-
 
 
 
@@ -144,6 +144,7 @@
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                   </div>
                 {%- endif -%}
+
 
 
                 {%comment%}
@@ -273,219 +274,8 @@
 
             
               {%- when 'quantity_selector' -%}
-                <div
-                  id="Quantity-Form-{{ section.id }}"
-                  class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
-                  {{ block.shopify_attributes }}
-                >
-                  {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
-                  {% # theme-check-disable %}
-                  {%- assign cart_qty = cart
-                    | item_count_for_variant: product.selected_or_first_available_variant.id
-                  -%}
-                  {% # theme-check-enable %}
-                  <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
-                    {{ 'products.product.quantity.label' | t }}
-                    <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}">
-                      {%- render 'loading-spinner' -%}
-                      <span
-                        >(
-                        {{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}}
-                        )</span
-                      >
-                    </span>
-                  </label>
-                  <div class="price-per-item__container">
-                    <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                      <button class="quantity__button" name="minus" type="button">
-                        <span class="visually-hidden">
-                          {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
-                        </span>
-                        {% render 'icon-minus' %}
-                      </button>
-                      <input
-                        class="quantity__input"
-                        type="number"
-                        name="quantity"
-                        id="Quantity-{{ section.id }}"
-                        data-cart-quantity="{{ cart_qty }}"
-                        data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                        min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                        {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
-                          data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-                          max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-                        {% endif %}
-                        step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
-                        value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-                        form="{{ product_form_id }}"
-                      >
-                      <button class="quantity__button" name="plus" type="button">
-                        <span class="visually-hidden">
-                          {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
-                        </span>
-                        {% render 'icon-plus' %}
-                      </button>
-                    </quantity-input>
-                    {%- liquid
-                      assign volume_pricing_array = product.selected_or_first_available_variant.quantity_price_breaks | sort: 'quantity' | reverse
-                      assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.min
-                      if cart_qty > 0
-                        assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.increment
-                      endif
-                    -%}
-                    {%- if product.quantity_price_breaks_configured? -%}
-                      <price-per-item
-                        id="Price-Per-Item-{{ section.id }}"
-                        data-section-id="{{ section.id }}"
-                        data-variant-id="{{ product.selected_or_first_available_variant.id }}"
-                      >
-                        {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
-                          {%- assign variant_price_compare = product.selected_or_first_available_variant.compare_at_price -%}
-                          <div class="price-per-item">
-                            {%- if variant_price_compare -%}
-                              <dl class="price-per-item--current">
-                                <dt class="visually-hidden">
-                                  {{ 'products.product.price.regular_price' | t }}
-                                </dt>
-                                <dd>
-                                  <s class="variant-item__old-price">
-                                    {{ variant_price_compare | money_with_currency }}
-                                  </s>
-                                </dd>
-                              </dl>
-                            {%- endif -%}
-                            {%- if current_qty_for_volume_pricing < volume_pricing_array.last.minimum_quantity -%}
-                              {%- assign variant_price = product.selected_or_first_available_variant.price
-                                | money_with_currency
-                              -%}
-                              <span class="price-per-item--current">
-                                {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
-                              </span>
-                            {%- else -%}
-                              {%- for price_break in volume_pricing_array -%}
-                                {%- if current_qty_for_volume_pricing >= price_break.minimum_quantity -%}
-                                  {%- assign price_break_price = price_break.price | money_with_currency -%}
-                                  <span class="price-per-item--current">
-                                    {{-
-                                      'products.product.volume_pricing.price_at_each'
-                                      | t: price: price_break_price
-                                    -}}
-                                  </span>
-                                  {%- break -%}
-                                {%- endif -%}
-                              {%- endfor -%}
-                            {%- endif -%}
-                          </div>
-                        {%- else -%}
-                          {%- assign variant_price = product.selected_or_first_available_variant.price
-                            | money_with_currency
-                          -%}
-                          {%- assign variant_price_compare = product.selected_or_first_available_variant.compare_at_price -%}
-                          <div class="price-per-item">
-                            {%- if variant_price_compare -%}
-                              <dl class="price-per-item--current">
-                                <dt class="visually-hidden">
-                                  {{ 'products.product.price.regular_price' | t }}
-                                </dt>
-                                <dd>
-                                  <s class="variant-item__old-price">
-                                    {{ variant_price_compare | money_with_currency }}
-                                  </s>
-                                </dd>
-                                <dt class="visually-hidden">
-                                  {{ 'products.product.price.sale_price' | t }}
-                                </dt>
-                                <dd>
-                                  <span class="price-per-item--current">
-                                    {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
-                                  </span>
-                                </dd>
-                              </dl>
-                            {%- else -%}
-                              <span class="price-per-item--current">
-                                {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
-                              </span>
-                            {%- endif -%}
-                          </div>
-                        {%- endif -%}
-                      </price-per-item>
-                    {%- endif -%}
-                  </div>
-                  <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
-                    {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
-                      <span class="divider">
-                        {{-
-                          'products.product.quantity.multiples_of'
-                          | t: quantity: product.selected_or_first_available_variant.quantity_rule.increment
-                        -}}
-                      </span>
-                    {%- endif -%}
-                    {%- if product.selected_or_first_available_variant.quantity_rule.min > 1 -%}
-                      <span class="divider">
-                        {{-
-                          'products.product.quantity.minimum_of'
-                          | t: quantity: product.selected_or_first_available_variant.quantity_rule.min
-                        -}}
-                      </span>
-                    {%- endif -%}
-                    {%- if product.selected_or_first_available_variant.quantity_rule.max != null -%}
-                      <span class="divider">
-                        {{-
-                          'products.product.quantity.maximum_of'
-                          | t: quantity: product.selected_or_first_available_variant.quantity_rule.max
-                        -}}
-                      </span>
-                    {%- endif -%}
-                  </div>
-                  {%- if product.quantity_price_breaks_configured? -%}
-                    <volume-pricing class="parent-display" id="Volume-{{ section.id }}">
-                      {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
-                        <span class="caption-large">{{ 'products.product.volume_pricing.title' | t }}</span>
-                        <ul class="list-unstyled">
-                          <li>
-                            <span>{{ product.selected_or_first_available_variant.quantity_rule.min }}+</span>
-                            {%- assign price = product.selected_or_first_available_variant.price
-                              | money_with_currency
-                            -%}
-                            <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}">
-                              {{- 'sections.quick_order_list.each' | t: money: price -}}
-                            </span>
-                          </li>
-                          {%- for price_break in product.selected_or_first_available_variant.quantity_price_breaks -%}
-                            {%- assign price_break_price = price_break.price | money_with_currency -%}
-                            <li class="{%- if forloop.index >= 3 -%}show-more-item hidden{%- endif -%}">
-                              <span>
-                                {{- price_break.minimum_quantity -}}
-                                <span aria-hidden="true">+</span></span
-                              >
-                              <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: price_break_price }}">
-                                {{- 'sections.quick_order_list.each' | t: money: price_break_price -}}
-                              </span>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                        {%- if product.selected_or_first_available_variant.quantity_price_breaks.size >= 3 -%}
-                          <show-more-button>
-                            <button
-                              class="button-show-more link underlined-link"
-                              id="Show-More-{{ section.id }}"
-                              type="button"
-                            >
-                              <span class="label-show-more label-text"
-                                ><span aria-hidden="true">+ </span>{{ 'products.facets.show_more' | t }}
-                              </span>
-                            </button>
-                          </show-more-button>
-                        {%- endif -%}
-                      {%- endif -%}
-                    </volume-pricing>
-                  {%- endif -%}
-                </div>
-          
-
-
-
-
+               
+<div class="quantity">  <input type="number" id="quantity_66fd04592e5c8" class="input-text qty text" name="quantity" value="1" aria-label="Produktantal" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off"></div>
 
               {%- when 'popup' -%}
                 <modal-opener
@@ -712,10 +502,59 @@
 
 
 
+{%comment%}
 
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <product-recommendations
+    class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+  >
+    {% if recommendations.performed and recommendations.products_count > 0 %}
+      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+      <ul
+        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+        role="list"
+      >
+        {% assign skip_card_product_styles = false %}
+        {% for recommendation in recommendations.products %}
+          <li class="grid__item">
+            {% render 'card-product',
+              card_product: recommendation,
+              media_aspect_ratio: section.settings.image_ratio,
+              image_shape: section.settings.image_shape,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_rating: section.settings.show_rating,
+              skip_styles: skip_card_product_styles
+            %}
+          </li>
+          {%- assign skip_card_product_styles = true -%}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </product-recommendations>
+  {% if section.settings.image_shape == 'arch' %}
+    {% render 'mask-arch' %}
+  {%- endif -%}
+</div>
 
-
-
+{%endcomment%}
+<div class="product-info-text">
+  <h2>SNABB FRAKT OCH EN TRYGG BETALNING</h2>
+  <img loading="lazy" width="640" height="356" src="https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;ssl=1" data-src="https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;ssl=1" class="attachment-large size-large wp-image-11960 ls-is-cached lazyloaded" alt="" data-srcset="https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;ssl=1 640w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg-300x167.png?strip=all&amp;lossy=1&amp;ssl=1 300w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg-600x334.png?strip=all&amp;lossy=1&amp;ssl=1 600w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;w=160&amp;ssl=1 160w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;w=480&amp;ssl=1 480w" data-sizes="(max-width: 640px) 100vw, 640px" sizes="(max-width: 640px) 100vw, 640px" srcset="https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;ssl=1 640w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg-300x167.png?strip=all&amp;lossy=1&amp;ssl=1 300w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg-600x334.png?strip=all&amp;lossy=1&amp;ssl=1 600w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;w=160&amp;ssl=1 160w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;w=480&amp;ssl=1 480w">
+  <div class="product-details__short-description">
+    <ul>
+      <li>Strumpor med sjävförtroende</li>
+      <li>En perfekt present till alla</li>
+      <li>Snabb och fri frakt, 2-3 dagar</li>
+    </ul>
+  </div>
+</div>
+  
 <div class="tabs">
   <button class="tablinks" onclick="openTab(event, 'beskrivning')">BESKRIVNING</button>
   <button class="tablinks" onclick="openTab(event, 'information')">YTTERLIGARE INFORMATION</button>
@@ -788,61 +627,280 @@
     <p>No reviews yet.</p>
   {% endfor %}
 </div>
+{%comment%}
+ {% render 'related-products-snippet', product: product %}
 
 
 
-{% include 'related-products' %}
-
-
-
-
-
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <product-recommendations
-    class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
-    data-section-id="{{ section.id }}"
-    data-product-id="{{ product.id }}"
-  >
-    {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
+<div class="color-scheme-2 gradient">
+  <product-recommendations class="related-products page-width section-template--23618388361482__related-products-padding isolate scroll-trigger animate--slide-in product-recommendations--loaded" data-url="/recommendations/products?limit=4" data-section-id="template--23618388361482__related-products" data-product-id="9651940851978">
+    
+      <h2 class="related-products__heading inline-richtext h1">
+        <strong>Relaterade produkter</strong>
       </h2>
-      <ul
-        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-        role="list"
-      >
-        {% assign skip_card_product_styles = false %}
-        {% for recommendation in recommendations.products %}
+      <ul class="grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list">
+        
+        
           <li class="grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              skip_styles: skip_card_product_styles
-            %}
-          </li>
-          {%- assign skip_card_product_styles = true -%}
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </product-recommendations>
-  {% if section.settings.image_shape == 'arch' %}
-    {% render 'mask-arch' %}
-  {%- endif -%}
+            
+<link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/component-rating.css?v=179577762467860590411726142819" rel="stylesheet" type="text/css" media="all">
+  <link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/component-volume-pricing.css?v=111870094811454961941726142819" rel="stylesheet" type="text/css" media="all">
+
+  <link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/component-price.css?v=70172745017360139101726142819" rel="stylesheet" type="text/css" media="all">
+  <link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/quick-order-list.css?v=38387008350345892421726142819" rel="stylesheet" type="text/css" media="all">
+  <link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/quantity-popover.css?v=78745769908715669131726142819" rel="stylesheet" type="text/css" media="all">
+<div class="card-wrapper product-card-wrapper underline-links-hover">
+    <div class="
+        card card--card
+         card--media
+         color-scheme-1 gradient
+        
+        
+        
+      " style="--ratio-percent: 109.58333333333331%;">
+      <div class="card__inner  ratio" style="--ratio-percent: 109.58333333333331%;"><div class="card__media">
+            <div class="media media--transparent media--hover-effect">
+              
+              <img srcset="//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=165 165w,//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=360 360w,//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=533 533w,//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=720 720w,//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268 720w
+                " src="//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=533" sizes="(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" alt="I HATE MY JOB Strumpor" class="motion-reduce" loading="lazy" width="720" height="789">
+              
 </div>
+          </div><div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading">
+              <a href="/products/i-hate-my-job-socks?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651942228234&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="StandardCardNoMediaLink--9651942228234" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink--9651942228234 NoMediaStandardBadge--9651942228234">
+                I HATE MY JOB Strumpor
+              </a>
+            </h3>
+          </div>
+          <div class="card__badge top left"></div>
+        </div>
+      </div>
 
 
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading h5" id="title--9651942228234">
+            <a href="/products/i-hate-my-job-socks?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651942228234&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="CardLink--9651942228234" class="full-unstyled-link" aria-labelledby="CardLink--9651942228234 Badge--9651942228234">
+              I HATE MY JOB Strumpor
+            </a>
+          </h3>
+          <div class="card-information"><span class="caption-large light"></span>
+<div class="
+      price ">
+    <div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+          <span class="price-item price-item--regular">
+            1 SEK
+          </span></div>
+      <div class="price__sale">
+          <span class="visually-hidden visually-hidden--inline">Regular price</span>
+          <span>
+          
+              
+                
+              
+       
+          </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
+        <span class="price-item price-item--sale price-item--last">
+          1 SEK
+        </span>
+      </div>
+      <small class="unit-price caption hidden">
+        <span class="visually-hidden">Unit price</span>
+        <span class="price-item price-item--last">
+          <span></span>
+          <span aria-hidden="true">/</span>
+          <span class="visually-hidden">&nbsp;per&nbsp;</span>
+          <span>
+          </span>
+        </span>
+      </small>
+    </div></div>
 
 
+</div>
+        </div>
+        
+        
+        <div class="card__badge top left"></div>
+      </div>
+    </div>
+  </div>
+          </li>
+          <li class="grid__item">
+            
+<div class="card-wrapper product-card-wrapper underline-links-hover">
+    <div class="
+        card card--card
+         card--media
+         color-scheme-1 gradient
+        
+        
+        
+        
+      " style="--ratio-percent: 109.58333333333331%;">
+      <div class="card__inner  ratio" style="--ratio-percent: 109.58333333333331%;"><div class="card__media">
+            <div class="media media--transparent media--hover-effect">
+              
+              <img srcset="//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=165 165w,//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=360 360w,//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=533 533w,//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=720 720w,//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261 720w
+                " src="//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=533" sizes="(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" alt="DRA ÅT HELVETE Strumpor" class="motion-reduce" loading="lazy" width="720" height="789">
+              
+</div>
+          </div><div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading">
+              <a href="/products/dra-at-helvete-strumpor-med-text?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651940327690&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="StandardCardNoMediaLink--9651940327690" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink--9651940327690 NoMediaStandardBadge--9651940327690">
+                DRA ÅT HELVETE Strumpor
+              </a>
+            </h3>
+          </div>
+          <div class="card__badge top left"></div>
+        </div>
+      </div>
+      {%endcomment%}
+{%comment%}
 
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading h5" id="title--9651940327690">
+            <a href="/products/dra-at-helvete-strumpor-med-text?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651940327690&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="CardLink--9651940327690" class="full-unstyled-link" aria-labelledby="CardLink--9651940327690 Badge--9651940327690">
+              DRA ÅT HELVETE Strumpor
+            </a>
+          </h3>
+          <div class="card-information"><span class="caption-large light"></span>
+<div class="
+      price ">
+    <div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+          <span class="price-item price-item--regular">
+            99 SEK
+          </span></div>
+      <div class="price__sale">
+          <span class="visually-hidden visually-hidden--inline">Regular price</span>
+          <span>
+          
+              
+                
+              
+       
+          </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
+        <span class="price-item price-item--sale price-item--last">
+          99 SEK
+        </span>
+      </div>
+      <small class="unit-price caption hidden">
+        <span class="visually-hidden">Unit price</span>
+        <span class="price-item price-item--last">
+          <span></span>
+          <span aria-hidden="true">/</span>
+          <span class="visually-hidden">&nbsp;per&nbsp;</span>
+          <span>
+          </span>
+        </span>
+      </small>
+    </div></div>
+
+
+</div>
+        </div>
+        
+        
+        <div class="card__badge top left"></div>
+      </div>
+    </div>
+  </div>
+          </li>
+          <li class="grid__item">
+            
+<div class="card-wrapper product-card-wrapper underline-links-hover">
+    <div class="
+        card card--card
+         card--media
+         color-scheme-1 gradient
+        
+        
+        
+        
+      " style="--ratio-percent: 109.58333333333331%;">
+      <div class="card__inner  ratio" style="--ratio-percent: 109.58333333333331%;"><div class="card__media">
+            <div class="media media--transparent media--hover-effect">
+              
+              <img srcset="//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=165 165w,//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=360 360w,//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=533 533w,//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=720 720w,//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253 720w
+                " src="//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=533" sizes="(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" alt="Jävligt Svensk Strumpor" class="motion-reduce" loading="lazy" width="720" height="789">
+              
+</div>
+          </div><div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading">
+              <a href="/products/javligt-svensk-strumpor?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651937968394&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="StandardCardNoMediaLink--9651937968394" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink--9651937968394 NoMediaStandardBadge--9651937968394">
+                Jävligt Svensk Strumpor
+              </a>
+            </h3>
+          </div>
+          <div class="card__badge top left"></div>
+        </div>
+      </div>
+
+
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading h5" id="title--9651937968394">
+            <a href="/products/javligt-svensk-strumpor?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651937968394&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="CardLink--9651937968394" class="full-unstyled-link" aria-labelledby="CardLink--9651937968394 Badge--9651937968394">
+              Jävligt Svensk Strumpor
+            </a>
+          </h3>
+          <div class="card-information"><span class="caption-large light"></span>
+<div class="
+      price ">
+    <div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+          <span class="price-item price-item--regular">
+            99 SEK
+          </span></div>
+      <div class="price__sale">
+          <span class="visually-hidden visually-hidden--inline">Regular price</span>
+          <span>
+          
+              
+                85 SEK
+              
+       
+          </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
+        <span class="price-item price-item--sale price-item--last">
+          99 SEK
+        </span>
+      </div>
+      <small class="unit-price caption hidden">
+        <span class="visually-hidden">Unit price</span>
+        <span class="price-item price-item--last">
+          <span></span>
+          <span aria-hidden="true">/</span>
+          <span class="visually-hidden">&nbsp;per&nbsp;</span>
+          <span>
+          </span>
+        </span>
+      </small>
+    </div></div>
+
+
+</div>
+        </div>
+        
+        
+        <div class="card__badge top left"></div>
+      </div>
+    </div>
+  </div>
+          </li>
+      </ul>
+    
+  </product-recommendations>
+  </div>
 
         </section>
       </div>
     </div>
+
+{%endcomment%}
+
 
     {% render 'product-media-modal', variant_images: variant_images %}
 
@@ -891,6 +949,7 @@
         assign seo_media = product.featured_media
       endif
     -%}
+
 
 
 

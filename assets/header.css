@@ -1,0 +1,361 @@
+/*Header*/
+div.shopify-section.shopify-section-group-header-group.section-header {
+  height: 66px;
+}
+sticky-header.header-wrapper.color-scheme-4.gradient.header-wrapper--border-bottom {
+  height: 66px;
+  background-color: #000;
+}
+
+header.header.header--middle-left.header--mobile-left.page-width.header--has-menu.header--has-social.header--has-account {
+  height: 66px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+h1.header__heading {
+  height: 46px;
+  width: 324px;
+}
+
+div.header__heading-logo-wrapper {
+  height: 36px;
+  width: 300px;
+}
+
+img.header__heading-logo.motion-reduce {
+  height: 36px;
+  width: 240px;
+}
+
+nav.header__inline-menu {
+  position: fixed;
+  width: 972px;
+  height: 46px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  top: 0px;
+  inset-inline-start: 354px;
+  background-color: #000;
+}
+
+ul.list-menu.list-menu--inline {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+}
+
+.header__inline-menu ul.list-menu li:first-child {
+  background-color: red;
+}
+
+li.elementor-item elementor-item-active {
+  width: 113.13px;
+  height: 46px;
+}
+
+a#HeaderMenu-startsida {
+  text-decoration: none;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Exo 2", Sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  fill: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+a#HeaderMenu-startsida:hover {
+  text-decoration: none;
+  background-color: red;
+}
+
+.header__active-menu-item {
+  text-decoration: none;
+}
+
+a span {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-inline-end: ;
+  margin-inline-start: var(--e-nav-menu-horizontal-menu-item-margin);
+}
+
+.header__inline-menu .list-menu li:hover {
+  background-color: red;
+}
+
+a.header__menu-item.list-menu__item.link.link--text.focus-inset:hover span {
+  text-decoration: none;
+}
+div.header__icons.header__icons--localization.header-localization {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  display: inline-flex;
+  position: fixed;
+}
+
+/*cart icon*/
+div.desktop-localization-wrapper {
+  width: 20px;
+  height: 20px;
+}
+
+a#cart-icon-bubble {
+  width: 50px;
+  height: 50px;
+  margin-left: -20px;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+}
+
+div.cart-count-bubble {
+  top: 3px;
+}
+
+.cart-count-bubble span {
+  color: black;
+  font-size: 10px;
+}
+
+div.header__icons.header__icons--localization.header-localization:hover {
+  background-color: transparent; /* Remove background when hovered */
+}
+
+/* Base header styles for larger screens */
+div.shopify-section.shopify-section-group-header-group.section-header,
+sticky-header.header-wrapper.color-scheme-4.gradient.header-wrapper--border-bottom,
+header.header.header--middle-left.header--mobile-left.page-width.header--has-menu.header--has-social.header--has-account {
+  height: 66px;
+}
+
+header.header.header--middle-left.header--mobile-left.page-width.header--has-menu.header--has-social.header--has-account {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+h1.header__heading {
+  height: 46px;
+  width: 324px;
+}
+
+div.header__heading-logo-wrapper,
+img.header__heading-logo.motion-reduce {
+  height: 36px;
+  width: 300px;
+}
+
+img.header__heading-logo.motion-reduce {
+  width: 240px;
+}
+
+nav.header__inline-menu {
+  position: fixed;
+  width: 972px;
+  height: 46px;
+  top: 0;
+  inset-inline-start: 354px;
+  background-color: #000;
+}
+
+ul.list-menu.list-menu--inline {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.header__inline-menu ul.list-menu li:first-child {
+  background-color: red;
+}
+
+li.elementor-item.elementor-item-active {
+  width: 113px;
+  height: 46px;
+}
+
+a#HeaderMenu-startsida {
+  padding: 13px 20px;
+  font-family: "Exo 2", Sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a#HeaderMenu-startsida:hover,
+.header__inline-menu .list-menu li:hover {
+  background-color: red;
+}
+
+a.header__menu-item.list-menu__item.link.link--text.focus-inset:hover span {
+  text-decoration: none;
+}
+
+div.header__icons.header__icons--localization.header-localization {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  display: inline-flex;
+  position: fixed;
+}
+
+/* Cart icon */
+div.desktop-localization-wrapper {
+  width: 20px;
+  height: 20px;
+}
+
+a#cart-icon-bubble {
+  width: 50px;
+  height: 50px;
+  margin-left: -20px;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+}
+
+div.cart-count-bubble {
+  top: 3px;
+}
+
+.cart-count-bubble span {
+  color: black;
+  font-size: 10px;
+}
+
+div.header__icons.header__icons--localization.header-localization:hover {
+  background-color: transparent;
+}
+/* Base header styles for larger screens */
+div.shopify-section.shopify-section-group-header-group.section-header,
+sticky-header.header-wrapper.color-scheme-4.gradient.header-wrapper--border-bottom,
+header.header.header--middle-left.header--mobile-left.page-width.header--has-menu.header--has-social.header--has-account {
+  height: 66px;
+}
+
+header.header.header--middle-left.header--mobile-left.page-width.header--has-menu.header--has-social.header--has-account {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+h1.header__heading {
+  height: 46px;
+  width: 324px;
+}
+
+div.header__heading-logo-wrapper,
+img.header__heading-logo.motion-reduce {
+  height: 36px;
+  width: 300px;
+}
+
+img.header__heading-logo.motion-reduce {
+  width: 240px;
+}
+
+nav.header__inline-menu {
+  position: fixed;
+  width: 972px;
+  height: 46px;
+  top: 0;
+  inset-inline-start: 354px;
+  background-color: #000;
+}
+
+ul.list-menu.list-menu--inline {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.header__inline-menu ul.list-menu li:first-child {
+  background-color: red;
+}
+
+li.elementor-item.elementor-item-active {
+  width: 113px;
+  height: 46px;
+}
+
+a#HeaderMenu-startsida {
+  padding: 13px 20px;
+  font-family: "Exo 2", Sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a#HeaderMenu-startsida:hover,
+.header__inline-menu .list-menu li:hover {
+  background-color: red;
+}
+
+a.header__menu-item.list-menu__item.link.link--text.focus-inset:hover span {
+  text-decoration: none;
+}
+
+div.header__icons.header__icons--localization.header-localization {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  display: inline-flex;
+  position: fixed;
+}
+
+/* Cart icon */
+div.desktop-localization-wrapper {
+  width: 20px;
+  height: 20px;
+}
+
+a#cart-icon-bubble {
+  width: 50px;
+  height: 50px;
+  margin-left: -20px;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+}
+
+div.cart-count-bubble {
+  top: 3px;
+}
+
+.cart-count-bubble span {
+  color: black;
+  font-size: 10px;
+}
+
+div.header__icons.header__icons--localization.header-localization:hover {
+  background-color: transparent;
+}

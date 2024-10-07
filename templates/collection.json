@@ -11,9 +11,6 @@
     },
     "custom_liquid_xK9N8E": {
       "type": "custom-liquid",
-      "custom_css": [
-
-      ],
       "settings": {
         "custom_liquid": "<div class=\"navigation\">\n    <ul>\n      {% for link in linklists.pagemenu.links %}\n        <li>{{ link.title | link_to: link.url }}<\/li>\n      {% endfor %}\n    <\/ul>\n<\/div>",
         "color_scheme": "scheme-4",

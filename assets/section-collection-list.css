@@ -59,3 +59,48 @@
 .collection-list-view-all {
   margin-top: 2rem;
 }
+
+#shopify-section-template--23618387902730__custom_liquid_xK9N8E li {
+  margin-right: 15px;
+}
+
+#shopify-section-template--23618387902730__custom_liquid_xK9N8E
+  .section-template--23618387902730__product-grid-padding {
+  height: 8090px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+ul#product-grid {
+  width: 1600px;
+  margin-right: 20px;
+  margin-top: -32px;
+}
+
+ul#product-grid li {
+  width: 380px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+
+.card__content button {
+  display: none;
+}
+
+.card__content button:hover {
+  background-color: red;
+  display: inline-block;
+}
+
+#shopify-section-template--23618387902730__product-grid {
+  margin-top: 10px;
+}
+
+.grid--4-col-desktop
+  li.animate--slide-in
+  .media.media--transparent.media--hover-effect
+  img {
+  width: 1600px;
+  margin-right: 20px;
+  margin-top: -32px;
+}
