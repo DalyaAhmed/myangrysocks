@@ -482,3 +482,7 @@ modal-opener.product__modal-opener.product__modal-opener--image {
 #Slider-Thumbnails-template--23618388361482__main {
   background-color: transparent !important; /* Set the entire slider background to transparent */
 }
+
+.product__info-wrapper .quantity {
+  width: 60px;
+}

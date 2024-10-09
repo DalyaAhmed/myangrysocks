@@ -22,6 +22,7 @@
     {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
     {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
   {% endunless %}
+  
   {%- if product.quantity_price_breaks_configured? -%}
     {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
@@ -41,30 +42,28 @@
 
 
 
-    .tablinks {
+  .tablinks {
   background-color: #f1f1f1;
   border: none;
   padding: 10px;
   cursor: pointer;
-}
+  }
 
-.tablinks.active {
+  .tablinks.active {
   background-color: #ccc;
-}
+  }
 
-.tabcontent {
+  .tabcontent {
   display: none;
   padding: 20px;
   border-top: none;
-}
-
-
-
+ }
 
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  
   {%- if product.quantity_price_breaks_configured? -%}
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
@@ -73,6 +72,7 @@
   {% if section.settings.image_zoom == 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
   {% endif %}
+  
   {%- if request.design_mode -%}
     <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
@@ -146,26 +146,6 @@
                 {%- endif -%}
 
 
-
-                {%comment%}
-                {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                  <div class="product__tax caption rte">
-                    {%- if cart.duties_included and cart.taxes_included -%}
-                      {{ 'products.product.duties_and_taxes_included' | t }}
-                    {%- elsif cart.taxes_included -%}
-                      {{ 'products.product.taxes_included' | t }}
-                    {%- elsif cart.duties_included -%}
-                      {{ 'products.product.duties_included' | t }}
-                    {%- endif -%}
-                    {%- if shop.shipping_policy.body != blank -%}
-                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                    {%- endif -%}
-                  </div>
-                {%- endif -%}
-                {%endcomment%}
-
-
-
                 <div {{ block.shopify_attributes }}>
                   {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                   {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -230,16 +210,6 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
-
-              {%comment%}
-              {%- when 'description' -%}
-                {%- if product.description != blank -%}
-                  <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                    {{ product.description }}
-                  </div>
-                {%- endif -%}
-              {%endcomment%}
-
 
               {%- when 'sku' -%}
                 <p
@@ -346,6 +316,7 @@
                     </p>
                   </div>
                 {%- endif -%}
+                            
               {%- when 'complementary' -%}
                 <product-recommendations
                   class="complementary-products quick-add-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"
@@ -501,48 +472,6 @@
           </a>
 
 
-
-{%comment%}
-
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <product-recommendations
-    class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    data-url="{{ routes.product_recommendations_url }}?limit={{ section.settings.products_to_show }}"
-    data-section-id="{{ section.id }}"
-    data-product-id="{{ product.id }}"
-  >
-    {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
-        {{ section.settings.heading }}
-      </h2>
-      <ul
-        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-        role="list"
-      >
-        {% assign skip_card_product_styles = false %}
-        {% for recommendation in recommendations.products %}
-          <li class="grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              skip_styles: skip_card_product_styles
-            %}
-          </li>
-          {%- assign skip_card_product_styles = true -%}
-        {% endfor %}
-      </ul>
-    {% endif %}
-  </product-recommendations>
-  {% if section.settings.image_shape == 'arch' %}
-    {% render 'mask-arch' %}
-  {%- endif -%}
-</div>
-
-{%endcomment%}
 <div class="product-info-text">
   <h2>SNABB FRAKT OCH EN TRYGG BETALNING</h2>
   <img loading="lazy" width="640" height="356" src="https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;ssl=1" data-src="https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;ssl=1" class="attachment-large size-large wp-image-11960 ls-is-cached lazyloaded" alt="" data-srcset="https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;ssl=1 640w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg-300x167.png?strip=all&amp;lossy=1&amp;ssl=1 300w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg-600x334.png?strip=all&amp;lossy=1&amp;ssl=1 600w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;w=160&amp;ssl=1 160w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;w=480&amp;ssl=1 480w" data-sizes="(max-width: 640px) 100vw, 640px" sizes="(max-width: 640px) 100vw, 640px" srcset="https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;ssl=1 640w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg-300x167.png?strip=all&amp;lossy=1&amp;ssl=1 300w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg-600x334.png?strip=all&amp;lossy=1&amp;ssl=1 600w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;w=160&amp;ssl=1 160w, https://e3d2ip38k2x.exactdn.com/wp-content/uploads/2024/08/Klarna_Payment_Badge.svg.png?strip=all&amp;lossy=1&amp;w=480&amp;ssl=1 480w">
@@ -608,8 +537,7 @@
               <span style="width: {{ review.review_rating_overall | times: 20 }}%"></span>
             </div>
           </div>
-          
-  
+    
 
         </div>
       </div>
@@ -627,279 +555,6 @@
     <p>No reviews yet.</p>
   {% endfor %}
 </div>
-{%comment%}
- {% render 'related-products-snippet', product: product %}
-
-
-
-<div class="color-scheme-2 gradient">
-  <product-recommendations class="related-products page-width section-template--23618388361482__related-products-padding isolate scroll-trigger animate--slide-in product-recommendations--loaded" data-url="/recommendations/products?limit=4" data-section-id="template--23618388361482__related-products" data-product-id="9651940851978">
-    
-      <h2 class="related-products__heading inline-richtext h1">
-        <strong>Relaterade produkter</strong>
-      </h2>
-      <ul class="grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list">
-        
-        
-          <li class="grid__item">
-            
-<link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/component-rating.css?v=179577762467860590411726142819" rel="stylesheet" type="text/css" media="all">
-  <link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/component-volume-pricing.css?v=111870094811454961941726142819" rel="stylesheet" type="text/css" media="all">
-
-  <link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/component-price.css?v=70172745017360139101726142819" rel="stylesheet" type="text/css" media="all">
-  <link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/quick-order-list.css?v=38387008350345892421726142819" rel="stylesheet" type="text/css" media="all">
-  <link href="//myangrysocks.myshopify.com/cdn/shop/t/27/assets/quantity-popover.css?v=78745769908715669131726142819" rel="stylesheet" type="text/css" media="all">
-<div class="card-wrapper product-card-wrapper underline-links-hover">
-    <div class="
-        card card--card
-         card--media
-         color-scheme-1 gradient
-        
-        
-        
-      " style="--ratio-percent: 109.58333333333331%;">
-      <div class="card__inner  ratio" style="--ratio-percent: 109.58333333333331%;"><div class="card__media">
-            <div class="media media--transparent media--hover-effect">
-              
-              <img srcset="//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=165 165w,//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=360 360w,//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=533 533w,//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=720 720w,//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268 720w
-                " src="//myangrysocks.myshopify.com/cdn/shop/files/jobb-strumpor-scaled-e1693222039594-600x512-1_6e87dffa-f464-4078-9d0d-ca5c315128de.png?v=1724531268&amp;width=533" sizes="(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" alt="I HATE MY JOB Strumpor" class="motion-reduce" loading="lazy" width="720" height="789">
-              
-</div>
-          </div><div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              <a href="/products/i-hate-my-job-socks?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651942228234&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="StandardCardNoMediaLink--9651942228234" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink--9651942228234 NoMediaStandardBadge--9651942228234">
-                I HATE MY JOB Strumpor
-              </a>
-            </h3>
-          </div>
-          <div class="card__badge top left"></div>
-        </div>
-      </div>
-
-
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading h5" id="title--9651942228234">
-            <a href="/products/i-hate-my-job-socks?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651942228234&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="CardLink--9651942228234" class="full-unstyled-link" aria-labelledby="CardLink--9651942228234 Badge--9651942228234">
-              I HATE MY JOB Strumpor
-            </a>
-          </h3>
-          <div class="card-information"><span class="caption-large light"></span>
-<div class="
-      price ">
-    <div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
-          <span class="price-item price-item--regular">
-            1 SEK
-          </span></div>
-      <div class="price__sale">
-          <span class="visually-hidden visually-hidden--inline">Regular price</span>
-          <span>
-          
-              
-                
-              
-       
-          </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
-        <span class="price-item price-item--sale price-item--last">
-          1 SEK
-        </span>
-      </div>
-      <small class="unit-price caption hidden">
-        <span class="visually-hidden">Unit price</span>
-        <span class="price-item price-item--last">
-          <span></span>
-          <span aria-hidden="true">/</span>
-          <span class="visually-hidden">&nbsp;per&nbsp;</span>
-          <span>
-          </span>
-        </span>
-      </small>
-    </div></div>
-
-
-</div>
-        </div>
-        
-        
-        <div class="card__badge top left"></div>
-      </div>
-    </div>
-  </div>
-          </li>
-          <li class="grid__item">
-            
-<div class="card-wrapper product-card-wrapper underline-links-hover">
-    <div class="
-        card card--card
-         card--media
-         color-scheme-1 gradient
-        
-        
-        
-        
-      " style="--ratio-percent: 109.58333333333331%;">
-      <div class="card__inner  ratio" style="--ratio-percent: 109.58333333333331%;"><div class="card__media">
-            <div class="media media--transparent media--hover-effect">
-              
-              <img srcset="//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=165 165w,//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=360 360w,//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=533 533w,//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=720 720w,//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261 720w
-                " src="//myangrysocks.myshopify.com/cdn/shop/files/roliga-strumpor-med-texten-dra-at-helvete-scaled-e1690530902176-600x511-1_30fb8ecb-5895-424f-a0b8-ee2c33bd4277.png?v=1724531261&amp;width=533" sizes="(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" alt="DRA ÅT HELVETE Strumpor" class="motion-reduce" loading="lazy" width="720" height="789">
-              
-</div>
-          </div><div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              <a href="/products/dra-at-helvete-strumpor-med-text?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651940327690&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="StandardCardNoMediaLink--9651940327690" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink--9651940327690 NoMediaStandardBadge--9651940327690">
-                DRA ÅT HELVETE Strumpor
-              </a>
-            </h3>
-          </div>
-          <div class="card__badge top left"></div>
-        </div>
-      </div>
-      {%endcomment%}
-{%comment%}
-
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading h5" id="title--9651940327690">
-            <a href="/products/dra-at-helvete-strumpor-med-text?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651940327690&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="CardLink--9651940327690" class="full-unstyled-link" aria-labelledby="CardLink--9651940327690 Badge--9651940327690">
-              DRA ÅT HELVETE Strumpor
-            </a>
-          </h3>
-          <div class="card-information"><span class="caption-large light"></span>
-<div class="
-      price ">
-    <div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
-          <span class="price-item price-item--regular">
-            99 SEK
-          </span></div>
-      <div class="price__sale">
-          <span class="visually-hidden visually-hidden--inline">Regular price</span>
-          <span>
-          
-              
-                
-              
-       
-          </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
-        <span class="price-item price-item--sale price-item--last">
-          99 SEK
-        </span>
-      </div>
-      <small class="unit-price caption hidden">
-        <span class="visually-hidden">Unit price</span>
-        <span class="price-item price-item--last">
-          <span></span>
-          <span aria-hidden="true">/</span>
-          <span class="visually-hidden">&nbsp;per&nbsp;</span>
-          <span>
-          </span>
-        </span>
-      </small>
-    </div></div>
-
-
-</div>
-        </div>
-        
-        
-        <div class="card__badge top left"></div>
-      </div>
-    </div>
-  </div>
-          </li>
-          <li class="grid__item">
-            
-<div class="card-wrapper product-card-wrapper underline-links-hover">
-    <div class="
-        card card--card
-         card--media
-         color-scheme-1 gradient
-        
-        
-        
-        
-      " style="--ratio-percent: 109.58333333333331%;">
-      <div class="card__inner  ratio" style="--ratio-percent: 109.58333333333331%;"><div class="card__media">
-            <div class="media media--transparent media--hover-effect">
-              
-              <img srcset="//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=165 165w,//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=360 360w,//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=533 533w,//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=720 720w,//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253 720w
-                " src="//myangrysocks.myshopify.com/cdn/shop/files/sverigestrumpor-scaled-e1712417224260-600x512-1_0507730b-f027-402a-a7a8-cbf5f5d4bfc9.png?v=1724531253&amp;width=533" sizes="(min-width: 1600px) 367px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" alt="Jävligt Svensk Strumpor" class="motion-reduce" loading="lazy" width="720" height="789">
-              
-</div>
-          </div><div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              <a href="/products/javligt-svensk-strumpor?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651937968394&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="StandardCardNoMediaLink--9651937968394" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink--9651937968394 NoMediaStandardBadge--9651937968394">
-                Jävligt Svensk Strumpor
-              </a>
-            </h3>
-          </div>
-          <div class="card__badge top left"></div>
-        </div>
-      </div>
-
-
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading h5" id="title--9651937968394">
-            <a href="/products/javligt-svensk-strumpor?pr_prod_strat=collection_fallback&amp;pr_rec_id=03a7750ae&amp;pr_rec_pid=9651937968394&amp;pr_ref_pid=9651940851978&amp;pr_seq=uniform" id="CardLink--9651937968394" class="full-unstyled-link" aria-labelledby="CardLink--9651937968394 Badge--9651937968394">
-              Jävligt Svensk Strumpor
-            </a>
-          </h3>
-          <div class="card-information"><span class="caption-large light"></span>
-<div class="
-      price ">
-    <div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
-          <span class="price-item price-item--regular">
-            99 SEK
-          </span></div>
-      <div class="price__sale">
-          <span class="visually-hidden visually-hidden--inline">Regular price</span>
-          <span>
-          
-              
-                85 SEK
-              
-       
-          </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
-        <span class="price-item price-item--sale price-item--last">
-          99 SEK
-        </span>
-      </div>
-      <small class="unit-price caption hidden">
-        <span class="visually-hidden">Unit price</span>
-        <span class="price-item price-item--last">
-          <span></span>
-          <span aria-hidden="true">/</span>
-          <span class="visually-hidden">&nbsp;per&nbsp;</span>
-          <span>
-          </span>
-        </span>
-      </small>
-    </div></div>
-
-
-</div>
-        </div>
-        
-        
-        <div class="card__badge top left"></div>
-      </div>
-    </div>
-  </div>
-          </li>
-      </ul>
-    
-  </product-recommendations>
-  </div>
-
-        </section>
-      </div>
-    </div>
-
-{%endcomment%}
 
 
     {% render 'product-media-modal', variant_images: variant_images %}
@@ -950,9 +605,6 @@
       endif
     -%}
 
-
-
-
 <script type="application/ld+json">
   {{ product | structured_data }}
 </script>
@@ -983,10 +635,6 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".tablinks").click();
 });
 </script>
-
-
-
-
 
 
 {% schema %}

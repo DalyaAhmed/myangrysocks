@@ -27,6 +27,84 @@
         "padding_bottom": 100
       }
     },
+    "image_with_text_YWCwNT": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YhpnDq": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>JAG ÄR FAN BÄSTA<\/strong>",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_V6B3W8": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Ankelstrumpor med självförtoende!<\/h2><h2><strong>69:-<\/strong><\/h2><h2><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_RcggNN": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "shopify:\/\/products\/jag-ar-fan-bast-ankelstrumpor",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_YhpnDq",
+        "text_V6B3W8",
+        "button_RcggNN"
+      ],
+      "custom_css": [
+        ".image-with-text__media-item {border: none !important;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/jag-ar-fan-bast-strumpor-scaled-e1712416192898_5b800766-7f18-4734-a4ec-12b2e30c8a17.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_Mj9EFG": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>NYHETER I BUTIKEN<\/strong>",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "roliga-strumpor",
+        "products_to_show": 2,
+        "columns_desktop": 2,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_with_text_yDAL8B": {
       "type": "image-with-text",
       "blocks": {
@@ -58,6 +136,7 @@
         "text_3bHkE9",
         "button_dtgweY"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (max-width: 768px) {.image-with-text__grid {width: auto; height: auto; display: flex; flex-direction: column; justify-content: flex-start; flex-wrap: nowrap; margin-left: 0px; margin-top: -26px; } .image-with-text__media-item {width: auto; height: 367px; } .image-with-text .image-with-text__media-item .image-with-text__media img {height: auto; align-items: center; margin-left: 3px; }}"
       ],
@@ -75,34 +154,6 @@
         "mobile_content_alignment": "left",
         "padding_top": 40,
         "padding_bottom": 0
-      }
-    },
-    "featured_collection_Mj9EFG": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "<strong>NYHETER I BUTIKEN<\/strong>",
-        "heading_size": "h0",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "roliga-strumpor",
-        "products_to_show": 2,
-        "columns_desktop": 2,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-2",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "image_with_text_VniWgN": {
@@ -136,6 +187,7 @@
         "text_jnbnVP",
         "button_nLV6BY"
       ],
+      "disabled": true,
       "custom_css": [
 
       ],
@@ -148,56 +200,6 @@
         "desktop_content_alignment": "left",
         "content_layout": "no-overlap",
         "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_YWCwNT": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_YhpnDq": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>JAG ÄR FAN BÄSTA<\/strong>",
-            "heading_size": "hxxl"
-          }
-        },
-        "text_V6B3W8": {
-          "type": "text",
-          "settings": {
-            "text": "<h2>Ankelstrumpor med självförtoende!<\/h2><h2><strong>69:-<\/strong><\/h2><h2><\/h2>",
-            "text_style": "body"
-          }
-        },
-        "button_RcggNN": {
-          "type": "button",
-          "settings": {
-            "button_label": "Lägg i varukorg",
-            "button_link": "shopify:\/\/products\/jag-ar-fan-bast-ankelstrumpor",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_YhpnDq",
-        "text_V6B3W8",
-        "button_RcggNN"
-      ],
-      "custom_css": [
-
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/jag-ar-fan-bast-strumpor-scaled-e1712416192898_5b800766-7f18-4734-a4ec-12b2e30c8a17.png",
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "scheme-1",
         "color_scheme": "scheme-2",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
@@ -435,6 +437,7 @@
     },
     "featured_collection_a9i3rM": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Hur gärna vill du bli klar med en julklapp redan idag?",
         "heading_size": "h1",
@@ -592,113 +595,32 @@
         "padding_bottom": 36
       }
     },
-    "featured_collection_yRG4VR": {
+    "featured_collection_bVyD8j": {
       "type": "featured-collection",
-      "custom_css": [
-
-      ],
       "settings": {
         "title": "Presenttips",
-        "heading_size": "h0",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
-        "description_style": "body",
-        "collection": "annat",
+        "description_style": "subtitle",
+        "collection": "presenter",
         "products_to_show": 2,
         "columns_desktop": 2,
-        "full_width": true,
+        "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "scheme-2",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_4XCPNt": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_iWKV4E": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>Boxen alla behöver!<\/strong>",
-            "heading_size": "h1"
-          }
-        },
-        "text_PRxQEk": {
-          "type": "text",
-          "settings": {
-            "text": "<h2>Beställ idag!<\/h2><h2><strong>299:- kr<\/strong><\/h2>",
-            "text_style": "body"
-          }
-        },
-        "button_RfzJTU": {
-          "type": "button",
-          "settings": {
-            "button_label": "Lägg i varukorg",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_iWKV4E",
-        "text_PRxQEk",
-        "button_RfzJTU"
-      ],
-      "custom_css": [
-
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/My-Angry-Socks-orginalpresent-scaled-e1707557504172-600x512-1.png",
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "featured_collection_mzmiG7": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Ankelstrumpor",
-        "heading_size": "h0",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "ankelstrumpor",
-        "products_to_show": 2,
-        "columns_desktop": 2,
-        "full_width": true,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-2",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "image_with_text_TJUxW8": {
@@ -781,13 +703,10 @@
         "padding_bottom": 60
       }
     },
-    "featured_collection_WXrMwY": {
+    "featured_collection_yE8YLb": {
       "type": "featured-collection",
-      "custom_css": [
-
-      ],
       "settings": {
-        "title": "Multipack med strumpor",
+        "title": "<strong>Multipack med strumpor<\/strong>",
         "heading_size": "h0",
         "description": "",
         "show_description": false,
@@ -795,7 +714,7 @@
         "collection": "multipack",
         "products_to_show": 4,
         "columns_desktop": 2,
-        "full_width": true,
+        "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
@@ -812,18 +731,18 @@
         "padding_bottom": 36
       }
     },
-    "featured_collection_7bBHQH": {
+    "featured_collection_WG9mQe": {
       "type": "featured-collection",
       "settings": {
-        "title": "<strong>Hur mycket gillar du rea?<\/strong>",
-        "heading_size": "h1",
+        "title": "<strong>Ankelstrumpor<\/strong>",
+        "heading_size": "h0",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "rea",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": true,
+        "collection": "ankelstrumpor",
+        "products_to_show": 2,
+        "columns_desktop": 2,
+        "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
@@ -840,7 +759,57 @@
         "padding_bottom": 36
       }
     },
-    "featured_collection_q6hdjt": {
+    "image_with_text_4XCPNt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_iWKV4E": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Boxen alla behöver!<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_PRxQEk": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Beställ idag!<\/h2><h2><strong>299:- kr<\/strong><\/h2>",
+            "text_style": "body"
+          }
+        },
+        "button_RfzJTU": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lägg i varukorg",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iWKV4E",
+        "text_PRxQEk",
+        "button_RfzJTU"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/My-Angry-Socks-orginalpresent-scaled-e1707557504172-600x512-1.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_RdF4eP": {
       "type": "featured-collection",
       "settings": {
         "title": "<strong>T-shirts<\/strong>",
@@ -854,21 +823,49 @@
         "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "scheme-2",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "featured_collection_RdF4eP": {
+    "featured_collection_YgWEqK": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Hur mycket gillar du rea?<\/strong>",
+        "heading_size": "h0",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "rea",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": true,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_3xbyYp": {
       "type": "featured-collection",
       "settings": {
         "title": "<strong>Andra presenter<\/strong>",
@@ -896,24 +893,24 @@
         "padding_bottom": 36
       }
     },
-    "image_with_text_gFMea3": {
+    "image_with_text_YiNyNB": {
       "type": "image-with-text",
       "blocks": {
-        "heading_XPDrEn": {
+        "heading_Qqdm3W": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Till alla med humör<\/strong>",
-            "heading_size": "hxl"
+            "heading": "<a href=\"https:\/\/myangrysocks.com\/product\/du-och-ditt-javla-humor\/\"><strong>Till alla med humör<\/strong><\/a>",
+            "heading_size": "h1"
           }
         },
-        "text_Bag7mg": {
+        "text_WMkziw": {
           "type": "text",
           "settings": {
-            "text": "<h2>3-par sköna strumpor!<\/h2><h2><strong>Endast 299:-<\/strong><\/h2>",
+            "text": "<h2>3-par sköna strumpor!<\/h2><h2><strong>299:- kr<\/strong><\/h2>",
             "text_style": "body"
           }
         },
-        "button_xpeNkK": {
+        "button_rtQtm3": {
           "type": "button",
           "settings": {
             "button_label": "Lägg i varukorg",
@@ -923,15 +920,12 @@
         }
       },
       "block_order": [
-        "heading_XPDrEn",
-        "text_Bag7mg",
-        "button_xpeNkK"
-      ],
-      "custom_css": [
-
+        "heading_Qqdm3W",
+        "text_WMkziw",
+        "button_rtQtm3"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_9917-scaled-e1687507257697-600x511-1.png",
+        "image": "shopify:\/\/shop_images\/IMG_0248-scaled-e1688409255377-600x630-1-1.webp",
         "height": "small",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -949,10 +943,10 @@
   },
   "order": [
     "rich_text_rVhGJA",
-    "image_with_text_yDAL8B",
-    "featured_collection_Mj9EFG",
-    "image_with_text_VniWgN",
     "image_with_text_YWCwNT",
+    "featured_collection_Mj9EFG",
+    "image_with_text_yDAL8B",
+    "image_with_text_VniWgN",
     "image_with_text_MdnbWr",
     "image_with_text_wnxHeA",
     "image_with_text_h8G6Wa",
@@ -962,15 +956,15 @@
     "image_with_text_C3BFDq",
     "featured_collection_WDaBwP",
     "image_with_text_Q7TNbm",
-    "featured_collection_yRG4VR",
-    "image_with_text_4XCPNt",
-    "featured_collection_mzmiG7",
+    "featured_collection_bVyD8j",
     "image_with_text_TJUxW8",
     "rich_text_9CD8ey",
-    "featured_collection_WXrMwY",
-    "featured_collection_7bBHQH",
-    "featured_collection_q6hdjt",
+    "featured_collection_yE8YLb",
+    "featured_collection_WG9mQe",
+    "image_with_text_4XCPNt",
     "featured_collection_RdF4eP",
-    "image_with_text_gFMea3"
+    "featured_collection_YgWEqK",
+    "featured_collection_3xbyYp",
+    "image_with_text_YiNyNB"
   ]
 }

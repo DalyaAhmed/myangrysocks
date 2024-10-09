@@ -1,0 +1,44 @@
+/* Desktop and tablet view */
+.image-with-text__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .image-with-text__grid {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .image-with-text__media-item {
+    order: 1; /* Image at the top */
+  }
+
+  .image-with-text__text-item {
+    order: 2; /* Text at the bottom */
+  }
+}
+/* Image with text*/
+
+@media (max-width: 450px) {
+  .image-with-text__text-item {
+    width: 100%; /* Make it take the full width on smaller screens */
+    height: auto; /* Adjust height automatically */
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  h2.image-with-text__heading strong {
+    font-size: 16px; /* Reduce font size for heading */
+  }
+
+  .image-with-text__text {
+    font-size: 14px; /* Reduce font size for body text */
+    color: red;
+  }
+
+  .button.button--primary {
+    font-size: 14px; /* Adjust button font size */
+    padding: 10px 15px; /* Adjust padding for better fit on mobile */
+  }
+}

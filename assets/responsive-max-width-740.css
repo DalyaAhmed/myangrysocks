@@ -1,0 +1,181 @@
+/* Responsiv image with text section  */
+@media (max-width: 768px) {
+  .image-with-text__grid {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin-left: 0px;
+    margin-top: -26px;
+  }
+  .image-with-text__media-item {
+    width: auto;
+    height: 367px;
+  }
+  .image-with-text .image-with-text__media-item .image-with-text__media img {
+    height: auto;
+    align-items: center;
+    margin-left: 3px;
+  }
+  .image-with-text__text-item.grid__item {
+    width: auto;
+  }
+  /*
+  .image-with-text__text-item .image-with-text__content h2 {
+    margin-left: -6px;
+    margin-top: -45px;
+    width: 153px;
+    line-height: 16px;
+  }
+
+  */
+  .image-with-text__grid {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+  .color-scheme-2.isolate.gradient {
+    margin-top: 300px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #shopify-section-template--23618388197642__image_with_text_tLNHHk
+    h2:first-of-type {
+    font-size: 52px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #shopify-section-template--23618388197642__image_with_text_C3BFDq h2 strong {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 31px;
+    letter-spacing: 1px;
+  }
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  #collection-info {
+    width: 90%;
+    margin: 30px auto;
+    padding: 15px;
+  }
+  #collection-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  #collection-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Header Responsive */
+@media (max-width: 768px) {
+  /* Header wrapper adjustments */
+  sticky-header.header-wrapper.color-scheme-4.gradient.header-wrapper--border-bottom {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height automatically */
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #000; /* Ensure background covers entire header */
+  }
+
+  header.header.header--top-left.header--mobile-left {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height automatically */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Logo adjustments */
+  .header__heading-logo-wrapper {
+    width: 200px;
+    height: 70px;
+    margin-top: 0px; /* Align logo better on mobile */
+    margin-left: 0px; /* Center the logo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img.header__heading-logo.motion-reduce {
+    width: 200px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  /* Icon adjustments */
+  .header__icons {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    position: fixed;
+    top: 10px;
+    right: 10px; /* Position icons in the top right */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0.8rem;
+    transition: background 0.3s; /* Smooth background transition */
+  }
+
+  /* Navigation adjustments */
+  nav.header__inline-menu {
+    position: relative;
+    width: 100%;
+    top: 0;
+    inset-inline-start: 0;
+    background-color: #000;
+    margin-top: 10px; /* Add some space between the logo and menu */
+  }
+
+  ul.list-menu.list-menu--inline {
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap; /* Ensure items stay in a row */
+    margin-top: 0px; /* Align menu better */
+  }
+
+  /* Links within the navigation */
+  a#HeaderMenu-startsida {
+    font-size: 14px; /* Smaller font for mobile */
+    padding: 10px 15px; /* Adjust padding */
+    text-align: center;
+  }
+
+  /* Cart Icon */
+  div.desktop-localization-wrapper {
+    width: 30px; /* Adjust size for mobile */
+    height: 30px;
+  }
+
+  a#cart-icon-bubble {
+    width: 50px;
+    height: 50px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  div.cart-count-bubble {
+    top: 3px;
+  }
+
+  .cart-count-bubble span {
+    color: black;
+    font-size: 10px;
+  }
+}

@@ -1,5 +1,6 @@
 .rich-text {
   z-index: 1;
+  margin-bottom: 15px;
 }
 
 .rich-text__wrapper {
