@@ -1459,10 +1459,10 @@
       }
     },
     "main-cart-footer": {
-      "name": "Delsumma",
+      "name": "Delsumma:",
       "blocks": {
         "subtotal": {
-          "name": "Delsumma"
+          "name": "Delsumma:"
         },
         "buttons": {
           "name": "Knapp för att betala i kassan"

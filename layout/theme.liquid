@@ -20,6 +20,7 @@
     <link href="{{ 'app.css' | asset_url }}" rel="stylesheet" type="text/css">
 
     <link href="{{ 'header.css' | asset_url }}" rel="stylesheet" type="text/css">
+
     <link href="{{ 'responsive.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'navigation-section-in-collection-page.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'image-with-text-section.css' | asset_url }}" rel="stylesheet" type="text/css">
@@ -29,14 +30,17 @@
     <link href="{{ 'section-collection-list.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'section-rich-text.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'section-multicolumn.css' | asset_url }}" rel="stylesheet" type="text/css">
-    {% comment %}<link href="{{ 'feature-collection-section.css' | asset_url }}" rel="stylesheet" type="text/css"> {% endcomment %}
-    <link href="{{ 'check-out-page.css' | asset_url }}" rel="stylesheet" type="text/css">
+
+    <link href="{{ 'feature-collection-section.css' | asset_url }}" rel="stylesheet" type="text/css">
+
     <link href="{{ 'footer.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'section-featured-product.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'home-page-collection-section.css' | asset_url }}" rel="stylesheet" type="text/css">
-    <link href="{{ 'responsive.css' | asset_url }}" rel="stylesheet" type="text/css">
-    {% comment %}   <link href="{{ 'responsive-max-width-480.css' | asset_url }}" rel="stylesheet" type="text/css"> {% endcomment %}
+    <link href="{{ 'mini-cart.css' | asset_url }}" rel="stylesheet" type="text/css">
+
+    {% comment %}<link href="{{ 'responsive-max-width-480.css' | asset_url }}" rel="stylesheet" type="text/css">{% endcomment %}
     {% comment %}   <link href="{{ 'responsive-max-width-740.css' | asset_url }}" rel="stylesheet" type="text/css"> {% endcomment %}
+
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
