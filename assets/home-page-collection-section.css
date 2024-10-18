@@ -35,12 +35,36 @@
 /* Collection section with 4 columns*/
 
 .collection.collection--full-width {
-  margin-left: 40px;
-  margin-right: 40px;
+  padding-left: 36px;
+  padding-right: 12px;
+}
+.slider-mobile-gutter.slider-component-full-width.scroll-trigger.animate--slide-in {
+  padding-laft: 50px;
+  padding-right: 20px;
 }
 
-.slider-mobile-gutter.slider-component-full-width.page-width.scroll-trigger.animate--slide-in
-  ul
-  li {
-  margin-left: 10px;
+/*Responsive mobile collection with 2  columns */
+@media (max-width: 480px) {
+  .collection
+    .slider-mobile-gutter.page-width.page-width-desktop.scroll-trigger.animate--slide-in
+    ul {
+    width: 375px;
+    height: 366px;
+  }
+
+  .collection
+    .slider-mobile-gutter.page-width.page-width-desktop.scroll-trigger.animate--slide-in
+    ul.grid.product-grid.contains-card.contains-card--product.grid--2-col-desktop.grid--2-col-tablet-down
+    li
+    .card.card--card.card--media.color-scheme-1.gradient {
+    width: auto;
+  }
+
+  .grid__item.scroll-trigger.animate--slide-in {
+    margin: 0px -14px 0px -14px;
+  }
+
+  .center.collection__view-all.scroll-trigger.animate--slide-in {
+    margin-left: -107px;
+  }
 }

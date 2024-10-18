@@ -21,7 +21,7 @@
 
     <link href="{{ 'header.css' | asset_url }}" rel="stylesheet" type="text/css">
 
-    <link href="{{ 'responsive.css' | asset_url }}" rel="stylesheet" type="text/css">
+    {% comment %}<link href="{{ 'responsive.css' | asset_url }}" rel="stylesheet" type="text/css">{% endcomment %}
     <link href="{{ 'navigation-section-in-collection-page.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'image-with-text-section.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'product-page.css' | asset_url }}" rel="stylesheet" type="text/css">
@@ -31,7 +31,7 @@
     <link href="{{ 'section-rich-text.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'section-multicolumn.css' | asset_url }}" rel="stylesheet" type="text/css">
 
-    <link href="{{ 'feature-collection-section.css' | asset_url }}" rel="stylesheet" type="text/css">
+    {% comment %} <link href="{{ 'feature-collection-section.css' | asset_url }}" rel="stylesheet" type="text/css">{% endcomment %}
 
     <link href="{{ 'footer.css' | asset_url }}" rel="stylesheet" type="text/css">
     <link href="{{ 'section-featured-product.css' | asset_url }}" rel="stylesheet" type="text/css">
@@ -338,6 +338,8 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     >
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
       h1, h2, li {
           color: #000000;
@@ -436,6 +438,21 @@
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
         countrySelectorSearchCount: `{{ 'localization.country_results_count' | t: count: '[count]' }}`,
       };
+    </script>
+
+    {% comment %}när man är inne på collection "Strumpor" så är menyvalet "Strumpor" markerat med rött och inget annat menyval, för att förtydliga vilken sidan man är inne på. {% endcomment %}
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var currentUrl = window.location.pathname;
+        var menuItems = document.querySelectorAll('.navigation ul li a');
+
+        menuItems.forEach(function(menuItem) {
+          if (menuItem.getAttribute('href') === currentUrl) {
+            menuItem.parentElement.classList.add('active');
+          }
+        });
+      });
     </script>
 
     {%- if settings.predictive_search_enabled -%}

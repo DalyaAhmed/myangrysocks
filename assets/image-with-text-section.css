@@ -14,11 +14,6 @@
   margin-top: 33px;
 }
 
-.image-with-text__grid {
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
 .image-with-text__media {
   border: none;
 }
@@ -167,4 +162,101 @@ h2.image-with-text__heading strong {
 
 .image-with-text__content .image-with-text__text + .button {
   margin-top: 1rem !important;
+}
+
+@media (max-width: 480px) {
+  .grid__item {
+    max-width: unset !important;
+  }
+
+  h2.image-with-text__heading strong {
+    height: 170px;
+    font-size: 20px !important;
+    font-weight: 600;
+    letter-spacing: 1px !important;
+    line-height: 0px;
+    margin-right: 49px;
+    width: 200px;
+    margin-right: -3px;
+  }
+  .image-with-text__grid {
+    border-width: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -15px;
+  }
+
+  h2.image-with-text__heading {
+    margin-left: -50px !important;
+    font-size: 20px !important;
+    font-weight: 600;
+    letter-spacing: 1px !important;
+    line-height: 0px;
+    margin-right: 49px;
+    width: 200px;
+  }
+
+  h2.image-with-text__heading a {
+    height: 170px;
+    font-size: 20px !important;
+    font-weight: 600;
+    letter-spacing: 1px !important;
+    line-height: 0px;
+    margin-right: 49px;
+    width: 200px;
+  }
+  .image-with-text__media img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    padding: 23px !important;
+  }
+
+  .button.button--primary {
+    margin-left: 0px;
+  }
+
+  .image-with-text__text {
+    width: 270px;
+  }
+
+  .image-with-text__content .image-with-text__text {
+    margin-top: 0px;
+  }
+  .image-with-text__text h2:first-of-type {
+    font-size: 12px !important;
+    font-weight: 500;
+    line-height: 31px !important;
+    letter-spacing: 1px !important;
+    margin-top: -11px !important;
+    margin-left: -7px !important;
+  }
+
+  .image-with-text__text h2:nth-of-type(2) {
+    margin-top: -1px !important;
+    margin-left: -10px !important;
+  }
+  .image-with-text__content.image-with-text__content--top {
+    padding: 0px 0px;
+  }
+
+  h2.image-with-text__heading {
+    width: auto;
+  }
+  h2.image-with-text__heading
+    .image-with-text__text
+    .open-model.button.button--primary {
+    margin-left: -100px !important;
+  }
+
+  .image-with-text__content .image-with-text__text + .button {
+    margin-left: -75px;
+  }
+
+  h2.title.inline-richtext.h0.scroll-trigger.animate--slide-in strong {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3em;
+    letter-spacing: 3.6px;
+  }
 }

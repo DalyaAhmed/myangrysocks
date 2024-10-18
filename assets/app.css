@@ -219,19 +219,6 @@ a.full-unstyled-link {
   margin-right: 10px;
   text-align: center;
 }
-#shopify-section-template--23618387902730__custom_liquid_xK9N8E
-  .color-scheme-4.gradient
-  .section-template--23618387902730__custom_liquid_xK9N8E-padding
-  .navigation
-  ul
-  li
-  a {
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 10px 27px;
-}
 
 #shopify-section-template--23618388197642__image_with_text_tLNHHk
   h2:first-of-type
@@ -372,18 +359,6 @@ h2:nth-of-type(2) {
   height: 350px;
 }
 
-.rich-text__text {
-  color: #ffffff;
-  font-family: "Exo 2", Sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 31px;
-  letter-spacing: 1px;
-  width: 1095px;
-  margin-left: 88px;
-  margin-top: 35px;
-}
-
 .collection.section-template--23618388197642__featured_collection_WXrMwY-padding {
   padding-left: 38px;
   padding-right: 50px;
@@ -400,27 +375,6 @@ h2:nth-of-type(2) {
   margin-top: -29px;
 }
 
-/*Collection page*/
-
-.color-scheme-4.gradient
-  .section-template--23618387902730__custom_liquid_xK9N8E-padding
-  .navigation
-  ul
-  li {
-  position: relative;
-  display: flex;
-  height: 45px;
-  padding-left: 1px;
-  background-color: blue;
-}
-
-.color-scheme-4.gradient
-  .section-template--23618387902730__custom_liquid_xK9N8E-padding
-  .navigation
-  ul {
-  width: 788px;
-  margin-top: 8px;
-}
 #shopify-section-template--23618387902730__custom_liquid_xK9N8E
   .color-scheme-4 {
   background-color: #000000;

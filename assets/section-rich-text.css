@@ -1,8 +1,19 @@
 .rich-text {
   z-index: 1;
   margin-bottom: 15px;
+  height: 556px;
 }
 
+.rich-text__text {
+  color: #ffffff;
+  font-family: "Exo 2", Sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 1px;
+  width: 1095px;
+  margin-top: 35px;
+}
 .rich-text__wrapper {
   display: flex;
   justify-content: center;
@@ -84,4 +95,15 @@
 
 .rich-text__blocks.right .rich-text__buttons {
   justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+  rich-text__wrapper {
+    width: auto;
+  }
+  #shopify-section-template--23618388197642__rich_text_rVhGJA
+    h2.rich-text__heading {
+    margin-left: 125px;
+    margin-top: 66px;
+  }
 }

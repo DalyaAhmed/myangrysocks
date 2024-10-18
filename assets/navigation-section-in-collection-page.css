@@ -84,3 +84,43 @@
 #shopify-section-template--23618387902730__custom_liquid_xK9N8E {
   box-shadow: 15px 9px 21px -6px rgba(0, 0, 0, 0.4);
 }
+#shopify-section-template--23618387902730__custom_liquid_xK9N8E
+  .color-scheme-4.gradient
+  .section-template--23618387902730__custom_liquid_xK9N8E-padding
+  .navigation
+  ul
+  li
+  a {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 10px 27px;
+}
+
+/*Collection page*/
+
+.color-scheme-4.gradient
+  .section-template--23618387902730__custom_liquid_xK9N8E-padding
+  .navigation
+  ul
+  li {
+  position: relative;
+  display: flex;
+  height: 45px;
+  padding-left: 1px;
+  background-color: blue;
+}
+
+.color-scheme-4.gradient
+  .section-template--23618387902730__custom_liquid_xK9N8E-padding
+  .navigation
+  ul {
+  width: 788px;
+  margin-top: 8px;
+}
+
+.navigation ul li.active a {
+  background-color: red;
+  color: #f8f8f8;
+}

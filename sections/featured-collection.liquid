@@ -116,6 +116,8 @@
               quick_add: section.settings.quick_add
             %}
           </li>
+
+          {% render 'modal-variant-form', section_id: section.id %}
           {%- assign skip_card_product_styles = true -%}
         {%- else -%}
           {%- for i in (1..section.settings.columns_desktop) -%}

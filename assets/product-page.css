@@ -210,13 +210,6 @@ td select {
   margin-top: 14px;
 }
 
-select {
-  font-family: inherit;
-  font-size: 17px;
-  line-height: 1.5;
-  padding: 10px;
-}
-
 /* the quality field*/
 
 /* Style the quantity input field */
@@ -441,12 +434,12 @@ label.screen-reader-text {
 }
 
 select {
-  width: 100%;
-  border: 1px solid #666;
-  border-radius: 3px;
-  padding: 0.5rem 1rem;
-  transition: all 0.3s;
+  font-family: inherit;
+  font-size: 17px;
+  line-height: 1.5;
+  padding: 10px;
 }
+
 modal-opener.product__modal-opener.product__modal-opener--image {
   overflow: hidden;
   position: relative;

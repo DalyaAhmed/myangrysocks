@@ -386,17 +386,8 @@
                                       {%- else -%}
                                         {% assign quick_add = 'none' %}
                                       {%- endif -%}
-                                      {% render 'card-product',
-                                        card_product: product,
-                                        media_aspect_ratio: block.settings.image_ratio,
-                                        show_secondary_image: false,
-                                        lazy_load: false,
-                                        skip_styles: skip_card_product_styles,
-                                        quick_add: quick_add,
-                                        section_id: section.id,
-                                        horizontal_class: true,
-                                        horizontal_quick_add: true
-                                      %}
+                                     {% render 'modal-variant-form', section_id: section.id %}
+                                     
                                     </li>
                                     {%- assign skip_card_product_styles = true -%}
                                   {%- endfor -%}
@@ -507,12 +498,12 @@
 <div id="information" class="tabcontent" style="display:none;">
   <h2>Ytterligare Information</h2>
   <p> 
-    <strong>Vikt:</strong> {{ product.metafields.vikt }} g<br>  
-    <strong>Dimensioner:</strong> {{ product.metafields.dimensioner }}<br>
-    <strong>Storlek:</strong> {{ product.metafields.storlek }}<br>
+    <strong>Vikt:</strong> {{ product.metafields.custom.vikt }} g<br>  
+    <strong>Dimensioner:</strong> {{ product.metafields.custom.dimensioner }}<br>
+    <strong>Storlek:</strong> {{ product.metafields.custom.storlek }}<br>
   </p>
 </div>
-
+                            
 <!-- Reviews Tab Content -->
 <div id="recensioner" class="tabcontent" style="display:none;">
   <h2>Recensioner</h2>
@@ -530,13 +521,23 @@
       <div class="ezrv-widget_review_row">
         <div class="ezrv-widget_review_rating_option">
           
-          <!-- Overall Rating -->
-          <div class="ezrv-container-display-star">
-            <div class="ezrv-display-star-title">Overall</div>
-            <div class="ezrv-widget_rating_star_content">
-              <span style="width: {{ review.review_rating_overall | times: 20 }}%"></span>
-            </div>
-          </div>
+         <!-- Overall Rating -->
+<div class="ezrv-container-display-star">
+  <div class="ezrv-display-star-title">Overall</div>
+  <div class="ezrv-widget_rating_star_content">
+    <span style="width: {{ review.review_rating_overall | times: 20 }}%"></span>
+  </div>
+</div>
+
+<!-- Review Content -->
+<div class="ezrv-review-content">
+  <p>{{ review.review_content }}</p> <!-- Assuming 'review_content' holds the review text -->
+</div>
+
+<!-- Review Creation Date -->
+<div class="ezrv-review-date">
+  <small>Reviewed on: {{ review.created_at | date: "%B %d, %Y" }}</small>
+</div>
     
 
         </div>
