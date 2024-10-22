@@ -84,6 +84,7 @@
                   <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
                     {{ block.settings.text }}
                   </div>
+
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
                     <a
@@ -168,11 +169,12 @@
       "label": "t:sections.image-with-text.settings.desktop_image_width.label",
       "info": "t:sections.image-with-text.settings.desktop_image_width.info"
     },
-   {
-  "type": "product",
-  "id": "product",
-  "label": "Select product"
-},
+
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select oproduct"
+    },
     {
       "type": "select",
       "id": "layout",
@@ -397,11 +399,59 @@
               "label": "t:sections.image-with-text.blocks.caption.settings.text_style.options__2.label"
             }
           ],
-          "default": "subtitle",
+          "default": "caption-with-letter-spacing",
           "label": "t:sections.image-with-text.blocks.caption.settings.text_style.label"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__1.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__2.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.options__3.label"
+            }
+          ],
+          "default": "medium",
+          "label": "t:sections.image-with-text.blocks.caption.settings.caption_size.label"
         }
       ]
-
+    },
+    {
+      "type": "text",
+      "name": "t:sections.image-with-text.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "t:sections.image-with-text.blocks.text.settings.text.default",
+          "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.image-with-text.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.image-with-text.blocks.text.settings.text_style.options__2.label"
+            }
+          ],
+          "default": "body",
+          "label": "t:sections.image-with-text.blocks.text.settings.text_style.label"
+        }
+      ]
     },
     {
       "type": "button",
@@ -412,42 +462,32 @@
           "type": "text",
           "id": "button_label",
           "default": "t:sections.image-with-text.blocks.button.settings.button_label.default",
-          "label": "t:sections.image-with-text.blocks.button.settings.button_label.label"
+          "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
+          "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
         },
         {
           "type": "url",
-          "id": "button_url",
-          "label": "t:sections.image-with-text.blocks.button.settings.button_url.label"
+          "id": "button_link",
+          "label": "t:sections.image-with-text.blocks.button.settings.button_link.label"
         },
         {
           "type": "checkbox",
-          "id"
-: "open_in_new_window",
-          "label": "t:sections.image-with-text.blocks.button.settings.open_in_new_window.label"
-        }
-      ]
-    },
-    {
-      "type": "richtext",
-      "name": "t:sections.image-with-text.blocks.richtext.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "text",
-          "default": "t:sections.image-with-text.blocks.richtext.settings.text.default",
-          "label": "t:sections.image-with-text.blocks.richtext.settings.text.label"
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.image-with-text.blocks.button.settings.outline_button.label"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.image-with-text.name",
-      "category": "t:sections.all.presets.category",
+      "name": "t:sections.image-with-text.presets.name",
       "blocks": [
         {
           "type": "heading"
+        },
+        {
+          "type": "text"
         },
         {
           "type": "button"

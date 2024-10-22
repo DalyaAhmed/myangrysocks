@@ -1,0 +1,150 @@
+<!-- Modal Form -->
+<div id="variant-modal-{{ section_id }}" class="variant-modal">
+  <div class="modal-content">
+    <form action="/cart/add" method="post" id="variant-form">
+      <select name="id" id="variant-size" required>
+        <option value="" disabled selected>Välj ett alternativ</option>
+
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}">{{ variant.title }}</option>
+        {% endfor %}
+      </select>
+
+      <br>
+
+      <!-- Quality Input Field -->
+      <input
+        type="number"
+        name="quality"
+        id="quality"
+        placeholder="Quantity"
+        min="1"
+        value="1"
+        required
+        style="width: 100%; border: 1px solid #666; border-radius: 3px; padding: 0.5rem; margin-bottom: 10px;"
+      >
+
+      <button type="submit" class="order button button--primary">Beställ</button>
+      <a href="#" class="cancel-button"><i class="fas fa-times"></i></a>
+    </form>
+  </div>
+</div>
+
+<!-- Inline CSS -->
+<style>
+   .variant-modal {
+     display: none; /* Initially hide the modal */
+     z-index: 9999;
+   }
+
+   .color-scheme-1 {
+     --gradient-background: auto;
+   }
+
+   /* Quality Input Field */
+   #variant-form #quality {
+     width: 100%;
+     border: 1px solid #666;
+     border-radius: 3px;
+     padding: 1.5rem !important;
+     margin-bottom: 10px;
+     margin-top: -17px;
+   }
+
+   /* Order Button */
+   .order {
+     margin-left: 0px !important;
+   }
+
+   /* Form Flexbox Layout */
+   #variant-form {
+     display: flex;
+     flex-direction: column;
+   }
+
+
+   /* Modal Content Styling */
+   .modal-content {
+     background-color: #fff;
+     margin-left: 89px;
+     margin-bottom: 112px;
+     border-color: transparent !important;
+     padding: 20px;
+     border: 1px solid #888;
+     max-width: 330px;
+     text-align: center;
+     height: auto;
+     box-shadow: antiquewhite;
+     transform: translateY(0%);
+     opacity: 1;
+     visibility: visible;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     transition: all 0.3s ease;
+   }
+
+   .cancel-button {
+     text-decoration: none; /* Remove underline */
+     border-radius: 125%;
+     background-color: #fafafa;
+     color: red;
+     border: 1px solid red;
+     width: 50px; /* Adjust size as needed */
+     height: 50px;
+     border-radius: 50%;
+     position: absolut;
+     right:0px;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 8px !important;
+     margin-left: auto !important; /* Push the button to the right */
+     ´
+   }
+
+   .cancel-button:hover{
+     background-color: red;
+     color: #fafafa;
+   }
+
+  .image-with-text__content .open-model.button.button--primary{
+     opacity: 0px !important;
+   }
+</style>
+
+<!-- Inline JavaScript -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      console.log("Document is ready");
+
+      // Show the modal when the "quick-add__submit" button is clicked
+      document.querySelectorAll('.quick-add__submit').forEach(button => {
+          button.addEventListener('click', function(event) {
+              event.preventDefault(); // Prevent the default button behavior
+              console.log("Quick add button clicked");
+
+              // Get the modal ID from the data-modal attribute or other means
+              const modalId = this.getAttribute('data-modal');
+              const modal = document.querySelector(modalId);
+
+              if (modal) {
+                  modal.style.display = 'block'; // Show the modal
+              }
+          });
+      });
+
+      // Hide the modal when the "Cancel" button is clicked
+      document.querySelectorAll('.cancel-button').forEach(button => {
+          button.addEventListener('click', function(event) {
+              console.log("Cancel button clicked");
+              event.preventDefault();
+              const modal = this.closest('.variant-modal');
+              if (modal) {
+                  modal.style.display = 'none'; // Hide the modal
+              }
+          });
+      });
+  });
+</script>
