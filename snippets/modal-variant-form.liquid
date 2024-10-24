@@ -24,7 +24,7 @@
         style="width: 100%; border: 1px solid #666; border-radius: 3px; padding: 0.5rem; margin-bottom: 10px;"
       >
 
-      <button type="submit" class="order button button--primary">Beställ</button>
+      <button type="submit" class="order model-form button button--primary">Beställ</button>
       <a href="#" class="cancel-button"><i class="fas fa-times"></i></a>
     </form>
   </div>
@@ -32,86 +32,95 @@
 
 <!-- Inline CSS -->
 <style>
-   .variant-modal {
-     display: none; /* Initially hide the modal */
-     z-index: 9999;
-   }
+  li.grid__item.scroll-trigger.animate--slide-in modal-opener{
+    position: fixed;
+     right: 27px;
+  }
+     .product-grid-container.scroll-trigger.animate--slide-in modal-opener a.open-model {
+         position: fixed;
+         right: 0;
+         margin-top: -75px;
 
-   .color-scheme-1 {
-     --gradient-background: auto;
-   }
+         /* Initial hidden state */
+         opacity: 0; /* Make it invisible */
+         visibility: hidden; /* Ensure it does not affect layout */
+         transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+     }
 
-   /* Quality Input Field */
-   #variant-form #quality {
-     width: 100%;
-     border: 1px solid #666;
-     border-radius: 3px;
-     padding: 1.5rem !important;
-     margin-bottom: 10px;
-     margin-top: -17px;
-   }
-
-   /* Order Button */
-   .order {
-     margin-left: 0px !important;
-   }
-
-   /* Form Flexbox Layout */
-   #variant-form {
-     display: flex;
-     flex-direction: column;
+     /* Show the button on hover */
+     li.grid__item.scroll-trigger.animate--slide-in:hover modal-opener  a.open-model {
+         opacity: 1; /* Make it visible */
+         visibility: visible; /* Allow it to be interacted with */
+       background-color:red;
+       color: white;
+       text-decoration: none;
+       min-width: unset;
+       min-height: unset;
+       border-radius: 50%;
+       height: 101%;
    }
 
 
-   /* Modal Content Styling */
-   .modal-content {
-     background-color: #fff;
-     margin-left: 89px;
-     margin-bottom: 112px;
-     border-color: transparent !important;
-     padding: 20px;
-     border: 1px solid #888;
-     max-width: 330px;
-     text-align: center;
-     height: auto;
-     box-shadow: antiquewhite;
-     transform: translateY(0%);
-     opacity: 1;
-     visibility: visible;
-     position: absolute;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     transition: all 0.3s ease;
-   }
 
-   .cancel-button {
-     text-decoration: none; /* Remove underline */
-     border-radius: 125%;
-     background-color: #fafafa;
-     color: red;
-     border: 1px solid red;
-     width: 50px; /* Adjust size as needed */
-     height: 50px;
-     border-radius: 50%;
-     position: absolut;
-     right:0px;
-     display: inline-flex;
-     align-items: center;
-     justify-content: center;
-     margin-top: 8px !important;
-     margin-left: auto !important; /* Push the button to the right */
-     ´
-   }
+        .variant-modal {
+          display: none; /* Initially hide the modal */
+          z-index: 9999;
+        }
 
-   .cancel-button:hover{
-     background-color: red;
-     color: #fafafa;
-   }
+        .color-scheme-1 {
+          --gradient-background: auto;
+        }
 
-  .image-with-text__content .open-model.button.button--primary{
-     opacity: 0px !important;
-   }
+        /* Quality Input Field */
+        #variant-form #quality {
+          width: 100%;
+          border: 1px solid #666;
+          border-radius: 3px;
+          padding: 1.5rem !important;
+          margin-bottom: 10px;
+          margin-top: -17px;
+        }
+
+        /* Order Button */
+        .order {
+          margin-left: 0px !important;
+        }
+
+        /* Form Flexbox Layout */
+        #variant-form {
+          display: flex;
+          flex-direction: column;
+        }
+
+
+
+        .cancel-button {
+          text-decoration: none; /* Remove underline */
+          border-radius: 125%;
+          background-color: #fafafa;
+          color: red;
+          border: 1px solid red;
+          width: 50px; /* Adjust size as needed */
+          height: 50px;
+          border-radius: 50%;
+          position: absolut;
+          right:0px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 8px !important;
+          margin-left: auto !important; /* Push the button to the right */
+          ´
+        }
+
+        .cancel-button:hover{
+          background-color: red;
+          color: #fafafa;
+        }
+
+       .image-with-text__content .open-model.button.button--primary{
+          opacity: 0px !important;
+        }
 </style>
 
 <!-- Inline JavaScript -->

@@ -115,9 +115,23 @@
               section_id: section.id,
               quick_add: section.settings.quick_add
             %}
+            <modal-opener data-modal="#variant-modal-{{ section.id }}">
+              <a
+                class="open-model model-form-collection-page button{% if section.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                {% if section.settings.button_link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="#"
+                {% endif %}
+                data-product-id="{{ product.id }}"
+                data-section-id="{{ section.id }}"
+                {{ section.shopify_attributes }}
+                ><i class="fas fa-shopping-bag"></i>{{ section.settings.button_label | escape -}}
+              </a>
+              {% render 'modal-variant-form', section_id: section.id %}
+            </modal-opener>
           </li>
 
-          {% render 'modal-variant-form', section_id: section.id %}
           {%- assign skip_card_product_styles = true -%}
         {%- else -%}
           {%- for i in (1..section.settings.columns_desktop) -%}
@@ -211,6 +225,24 @@
       "default": "t:sections.featured-collection.settings.title.default",
       "label": "t:sections.featured-collection.settings.title.label"
     },
+
+       {
+  "type": "select",
+  "id": "button_style_secondary",
+  "label": "Secondary Button Style",
+  "options": [
+    {
+      "value": "outline",
+      "label": "Outline"
+    },
+    {
+      "value": "solid",
+      "label": "Solid"
+    }
+  ],
+  "default": "outline"
+}
+,
     {
       "type": "select",
       "id": "heading_size",
@@ -403,6 +435,7 @@
       "label": "t:sections.all.image_shape.label",
       "info": "t:sections.all.image_shape.info"
     },
+
     {
       "type": "checkbox",
       "id": "show_secondary_image",
@@ -463,6 +496,9 @@
         }
       ]
     },
+
+
+
     {
       "type": "checkbox",
       "id": "swipe_on_mobile",

@@ -138,6 +138,21 @@
                 <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
               </p>
             {%- endif -%}
+
+             <modal-opener data-modal="#variant-modal-{{ card_product.id }}">
+
+              <a  class="open-model model-form-collection-page button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                      {% if block.settings.button_link == blank %}
+                        role="link" aria-disabled="true"
+                      {% else %}
+                        href="#"
+                      {% endif %}
+                      data-product-id="{{ product.id }}"
+                      data-section-id="{{ section.id }}"
+                      {{ block.shopify_attributes }}><i class="fas fa-shopping-bag"></i>{{ block.settings.button_label | escape }}</a>
+                {% render 'modal-variant-form', section_id: section.id, product: card_product %}
+              </modal-opener>
+
           </div>
         </div>
       {%- endif -%}

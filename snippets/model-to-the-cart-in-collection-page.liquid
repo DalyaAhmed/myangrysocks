@@ -1,10 +1,9 @@
 <!-- Modal Form -->
-<div id="variant-modal-{{ section_id }}" class="variant-modal">
+<div id="variant-modal-{{ product.id }}" class="variant-modal">
   <div class="modal-content">
     <form action="/cart/add" method="post" id="variant-form">
       <select name="id" id="variant-size" required>
         <option value="" disabled selected>Välj ett alternativ</option>
-
         {% for variant in product.variants %}
           <option value="{{ variant.id }}">{{ variant.title }}</option>
         {% endfor %}
@@ -29,7 +28,6 @@
     </form>
   </div>
 </div>
-
 <!-- Inline CSS -->
 <style>
    .variant-modal {
@@ -117,34 +115,34 @@
 <!-- Inline JavaScript -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-      console.log("Document is ready");
+    console.log("Document is ready");
 
-      // Show the modal when the "quick-add__submit" button is clicked
-      document.querySelectorAll('.quick-add__submit').forEach(button => {
-          button.addEventListener('click', function(event) {
-              event.preventDefault(); // Prevent the default button behavior
-              console.log("Quick add button clicked");
+    // Show the modal when the "quick-add__submit" button is clicked
+    document.querySelectorAll('.quick-add__submit').forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default button behavior
+        console.log("Quick add button clicked");
 
-              // Get the modal ID from the data-modal attribute or other means
-              const modalId = this.getAttribute('data-modal');
-              const modal = document.querySelector(modalId);
+        // Get the modal ID from the data-modal attribute
+        const modalId = this.getAttribute('data-modal');
+        const modal = document.querySelector(modalId);
 
-              if (modal) {
-                  modal.style.display = 'block'; // Show the modal
-              }
-          });
+        if (modal) {
+          modal.style.display = 'block'; // Show the modal
+        }
       });
+    });
 
-      // Hide the modal when the "Cancel" button is clicked
-      document.querySelectorAll('.cancel-button').forEach(button => {
-          button.addEventListener('click', function(event) {
-              console.log("Cancel button clicked");
-              event.preventDefault();
-              const modal = this.closest('.variant-modal');
-              if (modal) {
-                  modal.style.display = 'none'; // Hide the modal
-              }
-          });
+    // Hide the modal when the "Cancel" button is clicked
+    document.querySelectorAll('.cancel-button').forEach(button => {
+      button.addEventListener('click', function(event) {
+        console.log("Cancel button clicked");
+        event.preventDefault();
+        const modal = this.closest('.variant-modal');
+        if (modal) {
+          modal.style.display = 'none'; // Hide the modal
+        }
       });
+    });
   });
 </script>
