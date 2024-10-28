@@ -164,6 +164,12 @@ h2.image-with-text__heading strong {
   margin-top: 1rem !important;
 }
 
+#ImageWithText--template--23618388197642__image_with_text_MdnbWr
+  .image-with-text__text
+  h2:nth-of-type(2)
+  strong {
+  margin-left: -30px;
+}
 @media (max-width: 480px) {
   .grid__item {
     max-width: unset !important;

@@ -28,6 +28,7 @@
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {%- endunless -%}
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
@@ -228,6 +229,22 @@
                 </div>
               {% endif %}
               {% if card_product.variants.size == 1 and quick_add == 'bulk' %}
+                <modal-opener data-modal="#variant-modal-{{ card_product.id }}">
+                  <button
+                    class="open-model model-form-collection-page button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                    {% if block.settings.button_link == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="#"
+                    {% endif %}
+                    data-product-id="{{ product.id }}"
+                    data-section-id="{{ section.id }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    <i class="fas fa-shopping-bag"></i>{{ block.settings.button_label | escape }}
+                  </button>
+                  {% render 'modal-variant-form', section_id: section.id, product: card_product %}
+                </modal-opener>
                 <div
                   class="global-settings-popup quantity-popover__info"
                   tabindex="-1"
@@ -300,20 +317,22 @@
             -%}
             {%- if card_product.variants.size > 1 or qty_rules -%}
               <modal-opener data-modal="#variant-modal-{{ card_product.id }}">
-
-              <a  class="open-model model-form-collection-page button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
-                      {% if block.settings.button_link == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="#"
-                      {% endif %}
-                      data-product-id="{{ product.id }}"
-                      data-section-id="{{ section.id }}"
-                      {{ block.shopify_attributes }}><i class="fas fa-shopping-bag"></i>{{ block.settings.button_label | escape }}</a>
+                <button
+                  class="open-model model-form-collection-page button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                  {% if block.settings.button_link == blank %}
+                    role="link" aria-disabled="true"
+                  {% else %}
+                    href="#"
+                  {% endif %}
+                  data-product-id="{{ product.id }}"
+                  data-section-id="{{ section.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <i class="fas fa-shopping-bag"></i>{{ block.settings.button_label | escape }}
+                </button>
                 {% render 'modal-variant-form', section_id: section.id, product: card_product %}
               </modal-opener>
 
-            
               <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
                 <div
                   role="dialog"
@@ -335,7 +354,6 @@
                 </div>
               </quick-add-modal>
 
-            
             {%- else -%}
               <product-form data-section-id="{{ section.id }}">
                 {%- form 'product',
@@ -446,7 +464,6 @@
               >
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
             </div>
-            </div>
           {%- endif -%}
           <a
             {% if card_product == blank %}
@@ -459,7 +476,7 @@
             {{ 'products.product.view_full_details' | t -}}
             {% render 'icon-arrow' %}
           </a>
-          </div>
+
           <div class="quick-add-modal__content-info--bulk-details large-up-hide">
             <a href="{{ card_product.url }}" class="full-unstyled-link">
               <h3>{{ card_product.title | escape }}</h3>
@@ -471,7 +488,7 @@
               </div>
             {%- endif -%}
           </div>
-          </div>
+
           <div>
             <div class="quick-add-modal__content-info--bulk-details small-hide medium-hide">
               <a href="{{ card_product.url }}" class="full-unstyled-link">
@@ -485,6 +502,23 @@
                   <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
                 </div>
               {%- endif -%}
+
+              <modal-opener data-modal="#variant-modal-{{ card_product.id }}">
+                <button
+                  class="open-model model-form-collection-page button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                  {% if block.settings.button_link == blank %}
+                    role="link" aria-disabled="true"
+                  {% else %}
+                    href="#"
+                  {% endif %}
+                  data-product-id="{{ product.id }}"
+                  data-section-id="{{ section.id }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <i class="fas fa-shopping-bag"></i>{{ block.settings.button_label | escape }}
+                </button>
+                {% render 'modal-variant-form', section_id: section.id, product: card_product %}
+              </modal-opener>
             </div>
             <bulk-modal
               id="QuickBulkModal-{{ card_product.id }}-{{ section_id }}"
@@ -493,11 +527,6 @@
               data-product-id="{{ card_product.id }}"
             >
             </bulk-modal>
-          </div>
-          </div>
-          </div>
-          </modal-dialog>
-
           </div>
         {% endif %}
 {% endif %}
@@ -516,7 +545,5 @@
     >
       {{- 'products.product.on_sale' | t -}}
     </span>
-
-    
+  {% endif %}
 </div>
-   {% endif %}

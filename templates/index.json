@@ -65,7 +65,7 @@
         "image": "shopify:\/\/shop_images\/jag-ar-fan-bast-strumpor-scaled-e1712416192898_5b800766-7f18-4734-a4ec-12b2e30c8a17.png",
         "height": "small",
         "desktop_image_width": "medium",
-        "product": "",
+        "product": "jag-ar-fan-bast-ankelstrumpor",
         "layout": "text_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
@@ -82,6 +82,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "<strong>NYHETER I BUTIKEN<\/strong>",
+        "button_style_secondary": "outline",
         "heading_size": "h0",
         "description": "",
         "show_description": false,
@@ -295,7 +296,7 @@
         "image": "shopify:\/\/shop_images\/Fodelsedagspresent_med_strumpor-removebg-preview-1.png",
         "height": "small",
         "desktop_image_width": "medium",
-        "product": "",
+        "product": "tre-arga-strumpor-i-present",
         "layout": "text_first",
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
@@ -417,6 +418,7 @@
       ],
       "settings": {
         "title": "Fri frakt",
+        "button_style_secondary": "outline",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -446,6 +448,7 @@
       "disabled": true,
       "settings": {
         "title": "Hur gärna vill du bli klar med en julklapp redan idag?",
+        "button_style_secondary": "outline",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -528,6 +531,7 @@
       ],
       "settings": {
         "title": "Succé! Över 10 000 har beställt roliga strumpor 2024. Gör det du också!",
+        "button_style_secondary": "outline",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -607,6 +611,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Presenttips",
+        "button_style_secondary": "outline",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
@@ -716,6 +721,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "<strong>Multipack med strumpor<\/strong>",
+        "button_style_secondary": "outline",
         "heading_size": "h0",
         "description": "",
         "show_description": false,
@@ -744,6 +750,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "<strong>Ankelstrumpor<\/strong>",
+        "button_style_secondary": "outline",
         "heading_size": "h0",
         "description": "",
         "show_description": false,
@@ -823,6 +830,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "<strong>T-shirts<\/strong>",
+        "button_style_secondary": "outline",
         "heading_size": "h0",
         "description": "",
         "show_description": false,
@@ -851,6 +859,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "<strong>Hur mycket gillar du rea?<\/strong>",
+        "button_style_secondary": "outline",
         "heading_size": "h0",
         "description": "",
         "show_description": false,
@@ -879,6 +888,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "<strong>Andra presenter<\/strong>",
+        "button_style_secondary": "outline",
         "heading_size": "h0",
         "description": "",
         "show_description": false,
